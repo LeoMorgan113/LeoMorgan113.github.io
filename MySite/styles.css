@@ -1,0 +1,206 @@
+body{
+	font-family: 'Comfortaa Light', cursive;
+	color: #000000;
+	line-height: 28px;
+	background: white;
+	font-weight: 300;
+}
+img{
+	width:100%;
+	height: auto;
+}
+h1, h2, h3{
+	font-weight: bold;
+}
+ul,li{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+}
+section{
+	padding: 75px 0;
+}
+.header{
+	padding: 25px 0 55px 0;
+	background-image: url("img/1_img.jpeg");
+	background-position: right;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	height: 600px;
+  	margin-bottom: 50px;
+}
+.logo{
+	width: 145px;
+}
+.link-menu{
+	padding: 16px 65px 0 65px;
+	font-weight: 300;
+	font-size: 18px;
+	color: black;
+}
+a{
+	color: black;
+	text-decoration: underline;
+}
+a:hover{
+	color: white;
+	background: black; /* Цвет фона */
+	text-decoration: none;
+}
+.main-title{
+	font-size: 50px;
+	font-weight: 20px;
+	color: white;
+	border-right: 2px solid white; /* Параметры линии */
+    margin-right: 7%; /* Отступ слева */
+    margin-top: 150px;
+    padding-right: 30px; /* Расстояние от линии до текста */
+    line-height: 70px;
+    text-align: center;
+}
+.horizontal{
+    border: none; /* Убираем границу */
+    background-color: white; /* Цвет линии */
+    height: 2px; /* Толщина линии */
+    width: 330px;
+    margin-left: 30px;
+}
+.star_white{
+	height: 55px;
+    width: 40px;
+    margin-left: 88%;
+    margin-top: -15%;
+}
+.first-button {
+    display: block;
+    box-sizing: border-box;
+    margin: -2px 0 20px 60px;
+    padding: 10px 5px 10px 5px;
+    width: 50%;
+    background: rgba(225, 225, 225, 0.25);
+    border-radius: 40px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.horiz{
+	border: none; /* Убираем границу */
+    background-color: black; /* Цвет линии */
+    height: 2px; /* Толщина линии */
+    
+}
+.stars{
+	height: 130px;
+	width: 80px;
+	margin: -50px 30px 0 45px;
+}
+.Hello{
+	margin-top: 55px;
+	font-size: 22px;
+	text-align: center;
+	line-height: 36px;
+}
+.hello-text{
+	font-size: 16px;
+	text-align: center;
+}
+.second-button {
+    display: block;
+    box-sizing: border-box;
+    margin: 68px 0 0 70px;
+    padding: 10px 5px 10px 5px;
+    width: 60%;
+    border: 1.5px solid black;
+    border-radius: 40px;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.me{
+	margin: 30px 0 30px 0;
+}
+.menu2_0{
+	background: #CDBD99;
+	height: 190px;
+}
+.head2{
+	font-family: Graphik Light;
+	font-size: 36px;
+	text-align: center;
+}
+.textH{
+	text-align: center;
+	font-family: Graphik Light;
+	font-size: 20px;
+}
+.vline{
+	border: none; /* Убираем границу */
+ 	border-left: 1.5px solid black;
+ 	height: 170px;
+ 	margin-top: -100%;
+ 	margin-left: 40%;
+}
+.im_book{
+	margin-top: 30px;
+}
+.book{
+	font-size: 40px;
+	text-align: center;
+	margin-top: 50px; 
+	line-height: 60px;
+}
+.images{
+	margin: 30px 20px 10px 20px;
+	height: 180px;
+	width: 210px;
+}
+.text0{
+	font-size: 20px;
+	text-align: center;
+	word-wrap: break-word;
+}
+.flow0{
+	font-size: 28px;
+	margin: 60px 60px 30px 0;
+	font-weight: 27px;
+	text-align: center;
+	word-wrap: break-word;
+	line-height: 60px;
+	color: white;
+}
+.screen_4{
+	background-image: url("img/Group 12.png");
+	background-position: right;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	height: 650px;
+}
+.socialnetw{
+	height: 40px;
+	width: 40px;
+	margin: 0 25px 15px -5px;
+}
+.logo-footer{
+	margin: 70px 0 0 0;
+}
+.follow{
+	font-family: Graphik Medium;
+	font-size: 20px;
+	margin-top: 30px;
+	text-align: left;
+}
+.contact{
+	font-family: Graphik Medium;
+	font-size: 20px;
+	margin-top: 30px;
+	text-align: right;
+}
+.contact-text{
+	font-size: 18px;
+	text-align: right;
+	margin-top: 25px;
+}
