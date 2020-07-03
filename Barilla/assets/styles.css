@@ -1,0 +1,231 @@
+body{
+	background: url('bg-barilla.jpg') top right no-repeat ;
+	background-size: cover;
+	background-position: fixed;
+	font-family: 'Poppins', sans-serif;
+}
+.full{
+	background: rgba(255,255,255, 0.7);
+	border: 2px solid white;
+	border-radius: 0.7em;
+	margin: 1em auto;
+}
+.container{
+	max-width: 920px!important;
+	
+}
+.content{
+	width: 83.3%;
+	margin: 0 auto;
+}
+.headline{
+	background: #F01A18;
+	text-align: center;
+	border-radius: .7em .7em 0 0;
+	padding-top: .4rem;
+    padding-bottom: .4rem;
+    height: 72px;
+}
+.headline h1{
+	font-family: 'Baloo Bhai', cursive;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.image{
+	padding-top: 2rem;
+	padding-bottom: .4rem;
+	margin: 0 auto;
+}
+img{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+#forma{
+	padding: .4rem;
+	margin: 0 auto;
+	font-family: 'Poppins', sans-serif;
+}
+select, input{
+	font-family: 'Poppins', sans-serif;
+	font-size: 100%;
+    line-height: 1.15;
+    color: #0a0a0a;
+}
+
+form h2{
+	text-align: center;
+	font-weight: 400;
+	font-size: 1.5em;
+    color: #363636;
+    text-shadow: 0 0 0.85em #ccc;
+}
+.choice{
+	flex: 0 0 auto;
+}
+.choice span{
+	margin: 0;
+    padding: 0;
+    margin-left: .4rem;
+    margin-bottom: -.4rem;
+    text-align: left;
+	color: #4e4e4e;
+	font-size: .9rem;
+    font-weight: 700; 
+}
+.gender, .data{
+	display: flex;
+}
+.gender_cell, .text_cell{
+	position: relative;
+	padding: .4rem;
+	width: 50%;
+	flex: 0 0 auto;
+    min-height: 0;
+    min-width: 0;
+}
+.gender_cell input{
+	position: absolute;
+    z-index: -1;
+    left: -9999px;
+}
+label.active{
+	background-color: rgba(23,121,186,.75);
+    color: #fff;
+}
+#dt{
+	margin-bottom: 1rem;
+}
+.button.hollow:hover {	
+	border-color: #0c3d5d;
+}
+
+.mail {
+	width: 102%;
+	margin-bottom: .6rem;
+}
+
+input {
+    border: none; /* Убираем рамку */
+    border-bottom: 1px solid #4e4e4e; /* Линия снизу */
+    background: transparent; /* Прозрачный фон */
+
+}
+input:focus {
+    outline: none; /* Убираем контур */ 
+}
+input::placeholder {
+    transition: 0.5s; /* Время трансформации */
+    color: #4e4e4e; /* Цвет подсказки */
+}
+input:focus::placeholder { 
+    font-size: 12px; /* Размер шрифта */
+    transform: translateY(-16px); /* Сдвигаем вверх */
+}
+.text_cell{
+	color: white;
+}
+.cell{
+	width: 100%;
+	color: #4e4e4e;
+	padding: .5rem;
+
+}
+.button{
+	margin: 0 0 1rem;
+	padding: .85em 1em;
+	transition: background-color .25s ease-out,color .25s ease-out;
+	background-color: transparent;
+	font-size: .9rem;
+	line-height: 1;
+    text-align: center;
+    cursor: pointer;
+	font-weight: 700;
+}
+.expanded{
+	display: block;
+    margin-right: 0;
+    margin-left: 0;
+    border: 1px solid #1779ba;
+	color: #1779ba;
+	font-size: .9rem;
+}
+.radius{
+	border-radius: .4rem;
+}
+.text{
+	color: #4e4e4e;
+	font-weight: normal;
+    left: 0.9rem;
+    top: 1.4rem;
+    transition: all 0.2s ease;
+}
+.validate_text{
+	padding: 1rem 0.5rem 0.5rem;
+    border: 0 none;
+	background-color: transparent;
+	border: none;
+	color: #4e4e4e;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    transition: all 0.2s;
+	border-bottom: 1px solid #677073;
+}
+
+#nm, #cm, #em, #dt, #gn{
+    color: #c71414;
+    line-height: 1em;
+    padding: .25em .35em;
+    margin-left: -.4rem;
+    margin-top: -.4rem;
+    margin-bottom: 1px;
+    font-weight: 400;
+    font-size: .75rem;
+    text-align: left;
+}
+.inpt{
+	color: white;
+}
+#submit.button{
+	text-transform: uppercase;
+    font-weight: 700;
+    background: #F01A18;
+    color: #fff;
+}
+.button.large{
+	font-size: 1.25rem;
+	text-align: center;
+	margin-top: 1rem;
+}
+#submit.button:hover{
+	background: #183C7A;
+}
+.blinking{
+    padding:20px;
+    animation:blinking 1s infinite;
+}
+@keyframes blinking{
+    0%{color:rgba(255, 255, 255, 1);}
+    50%{color:rgba(255, 255, 255, 0.1);}
+    100%{color:rgba(255, 255, 255, 1);}
+}
+
+
+footer{
+	text-align: center;
+	font-size: .6em;
+	padding-top: .4rem;
+	padding-bottom: .4rem;
+}
+footer .content{
+	width: 91.6%;
+}
+footer p{
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
