@@ -1,0 +1,421 @@
+@font-face {
+	font-family: "AbrahamLincoln"; 
+	src: url("../fonts/AbrahamLincoln.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+
+body{
+	cursor: url('../img/cursor.cur'), pointer;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	background: #222222;
+	margin: 0;
+	color: white;
+	overflow-x: hidden;
+}
+h1, h2, h3{
+	font-family: "AbrahamLincoln"; 
+}
+h1{
+	font-size: 109px;
+}
+h2{
+	font-size: 95px;
+}
+h3{
+	font-size: 86px;
+}
+nav{
+	z-index: 9;
+	position: fixed;
+	width: 100%;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding-left: 0;
+}
+.slideInUp{
+	animation-duration: 3.5s;
+}
+.slideInUp{
+	animation-duration: 2s;
+}
+.short{
+	display: none;
+}
+.menu{
+	margin-top: 55px;
+}
+.menu span{
+	color: #ADC62C;
+}
+nav li a{
+	padding-left: 88px;
+	text-decoration: none;
+	color: white;
+}
+nav li a:hover{
+	text-decoration: none;
+	background: linear-gradient(90deg, #ADC62C , #D6FF00);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.navbar{
+	display: flex;
+	justify-content: center;
+}
+
+.border-button{
+  border-radius: 100%;
+  margin: 1em;
+  padding: 15px 18px;
+  box-shadow: inset 0 0 0 2px white;
+  position: relative;
+}
+  .border-button::before,
+  .border-button::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+  }
+ .draw {
+    transition: color 0.25s;
+}
+ .draw::before,
+  .draw::after {
+    border: 2px solid transparent;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
+  }
+
+  .draw::before {
+    top: 0;
+    left: 0;
+  }
+
+  .draw::after {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .draw:hover {
+    color: #60daaa;
+  }
+
+  .draw:hover::before,
+  .draw:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  .draw:hover::before {
+    border-top-color: #ADC62C; 
+    border-right-color: #ADC62C;
+    transition:
+      width 0.25s ease-out,
+      height 0.25s ease-out 0.25s; 
+  }
+
+  .draw:hover::after {
+    border-bottom-color: #ADC62C; 
+    border-left-color: #ADC62C;
+    transition:
+      border-color 0s ease-out 0.5s, 
+      width 0.25s ease-out 0.5s,
+      height 0.25s ease-out 0.75s; 
+  }
+
+#single_gr1:hover{
+	transform: scale(0.9) translate(-10%, -10%);
+	transition-duration: 3s;
+}
+#single_gr2:hover{
+	transform: scale(1.1) translate(10%, 0);
+	transition-duration: 1s;
+}
+#single_gr3:hover{
+	transform: rotate(180deg);
+	transition-duration: 1.8s;
+}
+#single_gr4:hover{
+	transform: translate(-5%, 50%);
+	transition-duration: 2.2s;
+}
+.fruit:hover{
+	transform: scale(0.85) translate(-15%, -50%);
+	transition-duration: 1.8s;
+}
+.fruit2:hover{
+	transform: skew(10deg, 5deg);
+	transition-duration: 1.2s;
+}
+.leaf1:hover{
+	transform: rotate(360deg) translate(15%, 50%);
+	transition-duration: 2s;
+}
+.leaf2:hover{
+	transform: scale(0.85);
+	transition-duration: 1.8s;
+}
+.single_main:hover{
+	transform: scale(1.15);
+	transition-duration: 2.8s;
+}
+.leaf:hover{
+	transform: scale(0.85);
+	transition-duration: 2.3s;
+}
+
+
+.slider img{
+	width: 100%;
+	margin: 0 auto;
+
+}
+#nums{
+	position: absolute;
+	z-index: 5;
+	top: 85%;
+	left: 7%;
+	font-family: "AbrahamLincoln"; 
+	font-size: 38px;
+	color: #818181;
+}
+#nums .active{
+	font-size: 66px;
+	color: #ADC62C;
+}
+#grape, #bottle{
+	position: absolute;
+	top: 25%;
+	left: 24%;
+}
+#bottle{
+	top: 55%;
+	left: 40%;
+}
+#single_gr1, #single_gr2, 
+#single_gr3, #single_gr4{
+	position: absolute;
+} 
+#single_gr1{
+	top: 65%;
+	left: 0;
+}
+#single_gr2{
+	top: 20%;
+	right: 0;
+}
+#single_gr3{
+	top: 85%;
+	right: 20%
+}
+#single_gr4{
+	top: 30%;
+	left: 20%;
+}
+#offer{
+	background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(1, 1, 1, 0));
+	height: 240px;
+	border-radius: 170px;
+	position: absolute;
+	top: 50%;
+	left: 23%; 
+	color: white;
+	text-align: center;
+}
+#offer p{
+	margin-left: 10%;
+	width: 558px;
+	font-weight: 500;
+	font-style: italic;
+}
+
+#screen2{
+	background: url('../img/2screen/2screen back.png') no-repeat top;
+	height: 100%;
+	padding-top: 92%;
+	padding-bottom: 20%;
+	text-align: center;
+}
+#screen2 .text h2{
+	position: absolute;
+	z-index: 1;
+	margin-top: -18%;
+	left: 40%;
+	padding: 6% 7%;
+	color: #CCEE1E;
+	background: rgb(0, 0, 0, 0.5);
+	border-radius: 100%;
+}
+#screen2 .text p{
+	position: absolute;
+	z-index: 2;
+	left: 31%;
+	width: 540px;
+	margin: 0 auto;
+	font-size: 18px;
+	font-weight: 300;
+	font-style: italic;
+}
+#screen2 .text p a{
+	color: #CCEE1E;
+	text-decoration: underline;
+}
+#screen2 .ellipse{
+	position: absolute;
+	z-index: 1;
+	margin-top: -30%;
+	right: 28%;
+	transform: rotate(90deg, 60deg, 60deg);
+}
+#screen2 .ellipse:hover{
+transform: rotate(360deg);
+}
+#screen2 .text:hover{
+	transition-duration: 2s;
+	transform: scale(1.05);
+}
+#screen2 .input{
+	display: hidden;
+}
+#screen2 .leaf1{
+	position: absolute;
+	z-index: 5;
+	margin-top: -35%;
+	left: 25%;
+}
+#screen2 .leaf2{
+	position: absolute;
+	z-index: 0;
+	margin-top: -2%;
+	right: 21%;
+}
+.grape2, .grape3, .fruit, .fruit2{
+	position: absolute;
+}
+.grape2{
+	height: 130%;
+	margin-top: -50%;
+	right: 0;
+}
+.grape3{
+	height: 100%;
+	margin-top: -50%;
+	left: 0;
+}
+.fruit{
+	margin-top: -5%;
+	left: 12%;
+}
+.fruit2{
+	margin-top: -30%;
+	right: 20%;
+}
+
+#screen3{
+	background: url('../img/3screen/lines 1.png') no-repeat top;
+	text-align: center;
+}
+#screen3 .single_main{
+	position: absolute;
+	margin-top: 15%;
+}
+#screen3 h3{
+	background: linear-gradient(90deg, #ADC62C , #D6FF00);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+#screen3 p{
+	width: 876px;
+	margin: 16px auto;
+	font-size: 18px;
+	font-weight: 300;
+	font-style: italic;
+}
+#screen3 .learn{
+	margin-top: 106px;
+	padding: 24px 40px;
+	background: none;
+	border: 1px solid #ADC62C;
+	border-radius: 40px;
+	color: white;
+}
+.learn{
+  position: relative;
+  background: linear-gradient(90deg, #ADC62C , #D6FF00);
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+ }
+.learn:after{
+   content: '';
+   position: absolute; 
+   z-index: -1;
+   bottom: 0; 
+   left: 0;
+   width: 100%;
+   height: 0;
+   color: black;
+   background: linear-gradient(90deg, #ADC62C , #D6FF00);   
+   -webkit-transition: 1.5s;
+   transition: 1.5s;
+ }
+.learn:hover:after{ 
+	color: black;   
+   	height: 100%;
+}
+
+
+#screen3 .glass1, .glass2{
+	position: absolute;
+	z-index: -1;
+}
+.glass1{
+	margin-top: -25%;
+	left: 0;
+}
+.glass2{
+	
+	margin-top: -27%;
+	right: 0;
+}
+
+footer{
+	margin-top: 155px;
+	background: black;
+	font-weight: 400;
+	text-align: center;
+}
+footer p{
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+footer form{
+	padding-top: 73px;
+	padding-bottom: 73px;
+}
+footer form span{
+	margin-right: 51px;
+}
+footer form input{
+	margin-right: 21px;
+	padding: 19px 36px;
+	background: none;
+	border: 1px solid #4E4E4E;
+	border-radius: 39px;
+	color: #838383;
+}
+footer form button{
+	padding: 19px 56px;
+	background: #383838;
+	color: #838383;
+	border: none;
+	border-radius: 39px;
+}
+.mango span{
+	color: #ADC62C;
+}
