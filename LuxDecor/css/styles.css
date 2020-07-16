@@ -629,6 +629,9 @@ footer{
 		width: 80%;
 		margin: 15% 0;
 	}
+	.photo01{
+		display: none;
+	}		
 	.ldm{
 		display: none;
 	}
