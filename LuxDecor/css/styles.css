@@ -612,6 +612,9 @@ footer{
     }
 }
 @media screen and (max-width: 575px){
+	.modalDialog > div {
+    		width: 450px;
+	}
 	h1{
 		font-size: 28px;
 	}
@@ -721,6 +724,9 @@ footer{
 	
 }
 @media screen and (max-width: 475px){
+	.modalDialog > div {
+    		width: 400px;
+	}
 	.title p{
 		font-size: 12px;
 	}
@@ -746,6 +752,9 @@ footer{
 	}
 }
 @media screen and (max-width: 450px){
+	.modalDialog > div {
+    		width: 350px;
+	}
 	.box1 h4, .box2 h4 {
 		font-size: 14px;
 	}
@@ -779,6 +788,9 @@ footer{
 	
 }
 @media screen and (max-width: 375px){
+	.modalDialog > div {
+    		width: 330px;
+	}
 	.box1, .box2 {
 	    width: 220px;
 	}
@@ -797,6 +809,9 @@ footer{
 	}
 }
 @media screen and (max-width: 340px){
+	.modalDialog > div {
+    		width: 300px;
+	}
 	.attention h2 {
 	    margin-top: 2rem;
 	}
