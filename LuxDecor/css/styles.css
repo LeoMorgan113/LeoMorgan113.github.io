@@ -100,10 +100,7 @@ h5{
 .bg_text{
 	background-color: rgb(22, 22, 22, 0.6);
 	color: white;
-	position: absolute;
-	top: 60%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	margin-top: 50%;
 	z-index: 2;
 	width: 80%;
 	padding: 20px;
@@ -569,7 +566,7 @@ footer{
 		margin-top: 10rem;
 	}
 	.bg_text{
-		top: 70%;
+		margin-top: 60%;
 	}
 	#screen3 img {
 		margin-top: 12rem;
@@ -612,6 +609,10 @@ footer{
     }
 }
 @media screen and (max-width: 575px){
+	.modalDialog > div {
+    	width: 450px;
+    	margin: 4% auto;
+	}
 	h1{
 		font-size: 28px;
 	}
@@ -627,7 +628,10 @@ footer{
 	.bg_text{
 		position: relative;
 		width: 80%;
-		margin: 15% 0;
+		margin: 35% 10%;
+	}
+	.photo01{
+		display: none;
 	}
 	.ldm{
 		display: none;
@@ -718,6 +722,9 @@ footer{
 	
 }
 @media screen and (max-width: 475px){
+	.modalDialog > div {
+    	width: 400px;
+	}
 	.title p{
 		font-size: 12px;
 	}
@@ -746,11 +753,19 @@ footer{
 	}
 }
 @media screen and (max-width: 450px){
+	.modalDialog > div {
+    	width: 350px;
+	}
 	.box1 h4, .box2 h4 {
 		font-size: 14px;
 	}
 	.box1, .box2{
 		width: 250px;
+	}
+	.bg_text{
+		position: relative;
+		width: 100%;
+		margin: 45% 0;
 	}
 	#screen7 img {
 	    height: 80px;
@@ -779,6 +794,9 @@ footer{
 	
 }
 @media screen and (max-width: 375px){
+	.modalDialog > div {
+    	width: 330px;
+	}
 	.box1, .box2 {
 	    width: 220px;
 	}
@@ -797,6 +815,9 @@ footer{
 	}
 }
 @media screen and (max-width: 340px){
+	.modalDialog > div {
+    	width: 300px;
+	}
 	.attention h2 {
 	    margin-top: 2rem;
 	}
