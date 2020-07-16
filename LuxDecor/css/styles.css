@@ -721,9 +721,6 @@ footer{
 	.title p{
 		font-size: 12px;
 	}
-	.photo1{
-		display: none;
-	}
 	.photo0{
 		display: flex;
 		justify-content: center;
