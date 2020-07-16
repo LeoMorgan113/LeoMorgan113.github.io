@@ -55,19 +55,3 @@
 }
 
 .close:hover { background: red; }
-
-@media screen and (max-width: 767px){
-    .modalDialog > div {
-        width: 450px;
-    }
-}
-@media screen and (max-width: 575px){
-    .modalDialog > div {
-        width: 300px;
-    }
-}
-@media screen and (max-width: 390px){
-    .modalDialog > div {
-        width: 270px;
-    }
-}
