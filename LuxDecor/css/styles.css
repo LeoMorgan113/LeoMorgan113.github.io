@@ -610,8 +610,12 @@ footer{
 }
 @media screen and (max-width: 575px){
 	.modalDialog > div {
+<<<<<<< HEAD
     	width: 450px;
     	margin: 4% auto;
+=======
+    		width: 450px;
+>>>>>>> cbfdff3f34b87c6b4ea9ac3f03ed7ff5e4bff572
 	}
 	h1{
 		font-size: 28px;
@@ -633,6 +637,9 @@ footer{
 	.photo01{
 		display: none;
 	}
+	.photo01{
+		display: none;
+	}		
 	.ldm{
 		display: none;
 	}
@@ -723,13 +730,14 @@ footer{
 }
 @media screen and (max-width: 475px){
 	.modalDialog > div {
+<<<<<<< HEAD
     	width: 400px;
+=======
+    		width: 400px;
+>>>>>>> cbfdff3f34b87c6b4ea9ac3f03ed7ff5e4bff572
 	}
 	.title p{
 		font-size: 12px;
-	}
-	.photo1{
-		display: none;
 	}
 	.photo0{
 		display: flex;
@@ -754,7 +762,11 @@ footer{
 }
 @media screen and (max-width: 450px){
 	.modalDialog > div {
+<<<<<<< HEAD
     	width: 350px;
+=======
+    		width: 350px;
+>>>>>>> cbfdff3f34b87c6b4ea9ac3f03ed7ff5e4bff572
 	}
 	.box1 h4, .box2 h4 {
 		font-size: 14px;
@@ -795,7 +807,11 @@ footer{
 }
 @media screen and (max-width: 375px){
 	.modalDialog > div {
+<<<<<<< HEAD
     	width: 330px;
+=======
+    		width: 330px;
+>>>>>>> cbfdff3f34b87c6b4ea9ac3f03ed7ff5e4bff572
 	}
 	.box1, .box2 {
 	    width: 220px;
@@ -816,7 +832,11 @@ footer{
 }
 @media screen and (max-width: 340px){
 	.modalDialog > div {
+<<<<<<< HEAD
     	width: 300px;
+=======
+    		width: 300px;
+>>>>>>> cbfdff3f34b87c6b4ea9ac3f03ed7ff5e4bff572
 	}
 	.attention h2 {
 	    margin-top: 2rem;
