@@ -100,7 +100,7 @@ span.salon1{
     width: 40%;
     background: white;
 }
-.nav-link:hover, .nav-link:active{
+.nav-link:hover, .nav-link:active, .nav-link span:hover{
     background: #FB5012;
     border-radius: 50px;
     color: white;
