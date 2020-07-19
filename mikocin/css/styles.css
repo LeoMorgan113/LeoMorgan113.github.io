@@ -256,9 +256,6 @@ b{
 form{
 	margin-left: 20px;
 }
-.old2 img, .new2 img{
-	margin-top: -7px;
-}
 form input{
 	background: #eef2f7;
 	padding: 14px 50px;
@@ -268,10 +265,25 @@ form input{
 	height: 65px;
 	margin-bottom: 10px;
 }
-.name, .phone{
+input[type="img1"]{
 	position: absolute;
-	margin-left: -70%;
-	margin-top: 6%;
+	padding: 0;
+	width: 30px;
+    height: 30px;
+    margin-top: 17px;
+    margin-left: 10px;
+    border: none;
+    background: url("../img/screen1/name.png") no-repeat 50% 50%; /* Параметры фона */
+}
+input[type="img2"]{
+	position: absolute;
+	padding: 0;
+	width: 30px;
+    height: 30px;
+    margin-top: 17px;
+    margin-left: 13px;
+    border: none;
+    background: url("../img/screen1/phone.png") no-repeat 50% 50%; /* Параметры фона */
 }
 button{
 	margin-top: 5px;
@@ -463,11 +475,6 @@ button{
 	    margin: 0 auto;
 	    text-align: center;
 	}
-	.name, .phone {
-	    position: absolute;
-	    margin-left: -36%;
-	    margin-top: 4%;
-	}
 	.text{
 		margin-top: 10vh;
 	}
@@ -538,23 +545,4 @@ button{
 		font-size: 18px;
 	}
 }
-input[type="img1"]{
-	position: absolute;
-	padding: 0;
-	width: 30px;
-    height: 30px;
-    margin-top: 17px;
-    margin-left: 10px;
-    border: none;
-    background: url("../img/screen1/name.png") no-repeat 50% 50%; /* Параметры фона */
-}
-input[type="img2"]{
-	position: absolute;
-	padding: 0;
-	width: 30px;
-    height: 30px;
-    margin-top: 17px;
-    margin-left: 13px;
-    border: none;
-    background: url("../img/screen1/phone.png") no-repeat 50% 50%; /* Параметры фона */
-}
+
