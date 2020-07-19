@@ -375,7 +375,7 @@ button{
 }
 @media screen and (max-width: 767px){
 	header{
-		height: 320vh;
+		height: 350vh;
 	}
 	.hide{
 		display: block;
