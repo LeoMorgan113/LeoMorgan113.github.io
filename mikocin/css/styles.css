@@ -26,7 +26,7 @@ header{
 	background: url("../img/screen1/background.png") no-repeat center;
 	background-size: cover;
 	width: 100%;
-	height: 120vh;
+	height: 900px;
 }
 
 .logo span{
@@ -216,8 +216,9 @@ b{
 	display: inline-block;
 	text-align: center;
 }
-.old_price{
-	margin-left: 30px;
+.price{
+	width: 210px;
+	margin: 0 auto;
 }
 .new_price{
 	margin-left: 17px;
@@ -254,7 +255,8 @@ b{
 	font-size: 34px;
 }
 form{
-	margin-left: 20px;
+    width: 218px;
+    margin: 0 auto;
 }
 form input{
 	background: #eef2f7;
@@ -377,14 +379,77 @@ button{
 	margin-top: 55px;
 	left: 48%;
 }
+
+@media screen and (max-width: 1200px){
+	header{
+		height: 1050px;
+	}
+	.orange1 {
+    	margin-left: 180px;
+    }
+	.bullets{
+		margin: 0 auto;
+	}
+	.legs {
+	    position: absolute;
+	    z-index: 1;
+	    top: -20%;
+	    left: -40%;
+	    height: 50%;
+	}
+	.circle_back{
+		position: absolute;
+	    z-index: 0;
+	    left: -21%;
+	    top: 2%;
+	    height: 55%;
+	}
+	.grass{
+		width: 50%;
+		top: 350px;
+		right: -10px;
+	}
+	.first{
+		top: 250px;
+	}
+	.second{
+		top: 380px;
+	}
+	.third{
+		top: 430px;
+	}
+	.miko1,
+	.miko2, .third{
+		width: 80%;
+	}
+	.pills{
+		width: 25%;
+	    left: -22%;
+	    top: 450px;
+	}
+	.first p, .second p{
+		right: 40px;
+	}
+	.last{
+		margin: 40px auto;
+	}
+	.safe{
+		padding-top: 10px;
+	}
+	h4{
+		width: 70%;
+		margin: 20px auto;
+	}
+}
 @media screen and (max-width: 991px){
 	.white_line{
 		left: 40%;
 	}
+	
 }
 @media screen and (max-width: 767px){
 	header{
-		height: 1800px;
+		height: 1930px;
 	}
 	.logo div{
 		width: 200px;
@@ -413,14 +478,14 @@ button{
 		position: relative;
 		left: 0;
 		top: 0;
-		width: 80%;
+		height: 100%;
 		padding-top: 2%;
-		padding-left: 10%;
 	}
 	.grass{
-		width: 50%;
+		width: 40%;
 		bottom: 10px;
-		right: 0;
+		right: 90px;
+		top: 120px;
 	}
 	.miko1,
 	.miko2, .third{
@@ -430,6 +495,7 @@ button{
 		width: 25%;
 		left: 10%;
 		bottom: 0;
+		top: 330px;
 	}
 	.first{
 		top: 40%;
@@ -448,12 +514,16 @@ button{
 	.third{
 		right: 5px;
 		bottom: -100px;
+		top: 300px;
 	}
 	.steps .arr1, .steps .arr2{
 		margin-left: 78px;
 	}
 	.steps .arr2{
 		padding-top: 27%;
+	}
+	.text{
+		margin-top: 50px;
 	}
 	.delivery {
 	    background: url(../img/screen1/phone_delivery0.png) no-repeat center;
@@ -477,9 +547,6 @@ button{
 	    width: 70%;
 	    margin: 0 auto;
 	    text-align: center;
-	}
-	.text{
-		margin-top: 10vh;
 	}
 	.text h2{
 		width: 300px;
@@ -513,8 +580,14 @@ button{
 	.stat{
 		left: 46%;
 	}
+	.statistics p{
+		padding: 40px;
+	}
 }
 @media screen and (max-width: 532px){
+	header{
+		height: 2000px;
+	}
 	.steps .arr1{
 	    margin-top: 20%;
 	}
@@ -522,17 +595,14 @@ button{
 		padding-top: 32%;
 	}
 }
-@media screen and (min-width:475px) and (max-width: 510px){
-	header{
-		height: 1900px;
-	}
-}
+
 @media screen and (max-width:475px){
-	header{
-		height: 1900px
-	}
 	.third{
 		bottom: -50px;
+	}
+	.grass {
+	    right: 0;
+	    top: 160px;
 	}
 }
 @media screen and (max-width:380px){
