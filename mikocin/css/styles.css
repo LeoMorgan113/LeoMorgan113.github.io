@@ -386,12 +386,15 @@ button{
 	header{
 		height: 1800px;
 	}
+	.logo div{
+		width: 200px;
+		margin: 0 auto;
+	}
 	.orange1{
-		margin-left: 30%;
+		margin-left: 0;
 	}
 	.bullets div{
 		display: block;
-		width: 150px;
 		margin: 15px auto;
 	}
 	.bullets div:nth-child(2) {
