@@ -1,0 +1,198 @@
+header{
+	background: url('../img/main.png') no-repeat center;
+	-moz-background-size: cover; /* Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover; /* Современные браузеры */
+    width: 100%;
+    height: 100vh;
+	
+}
+nav{
+	padding-top: 1.7rem;
+}
+nav a{
+	color: white;
+	margin-right: 2rem;
+}
+h1,h2,h3,h4,h5{
+	font-family: 'PT Serif', serif;
+	font-weight: bold;
+}
+h1{
+	color: white;
+	font-size: 36px;
+	padding-top: 5.5rem;
+}
+h2{
+	font-size: 32px;
+	color: #161616;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+nav a:hover{
+	color: #161616;
+	background: #FB5012;
+	text-decoration: underline;
+	padding: .4rem 1rem;
+}
+
+span.salon1{
+	position: absolute;
+	color: white;
+	margin-top: 1rem;
+	font-size: .9em;
+	padding-right: .4rem;
+	padding-left: .3rem;
+	border-right: 1px solid white;
+}
+span.salon2{
+	border-right: 1px solid #FB5012;
+}
+.menu {
+	padding-top: 1.7rem;
+}
+.lg img{
+	height: 80%;
+}
+
+.phone{
+	text-align: end;
+	padding-top: 1.5rem;
+}
+.phone a{
+	background: #FB5012;
+	text-shadow: 0 4px 8px rgba(22,22,22,0.45);
+	padding: .6rem .8rem .6rem .8rem;
+}
+.phone a:hover{
+	color: #161616;
+	text-shadow: 0 4px 8px rgba(255,255,255,0.45);
+	padding: .6rem .8rem .6rem .8rem;
+}
+.offer{
+	color: white;
+	padding-top: .5rem;
+}
+.head2{
+	display: none;
+}
+.nav{
+	display: none;
+}
+.navbar-collapse{
+	position: absolute;
+    background: rgb(22, 22, 22, 1);
+    text-align: center;
+    z-index: 999999;
+    margin-top: 70px;
+    width: 95%;
+}
+.navbar-nav a{
+	font-weight: 700;
+    font-size: 18px;
+    color: #FB5012;
+    margin: 20px;
+    text-align: center;
+}
+.navbar-nav .nav-link{
+    margin: 0;
+}
+.navbar-nav hr{
+    width: 40%;
+    background: white;
+}
+.nav-link:hover, .nav-link:active, .nav-link span:hover{
+    background: #FB5012;
+    border-radius: 50px;
+    color: white;
+}
+li{
+	font-size: 15px;
+	color: white;
+}
+li a span{
+	color: white;
+}
+li a span:hover{
+	color: #FB5012;
+}
+@media screen and (max-width: 1099px){
+	span.salon1{
+		margin-top: 1.3rem;
+	}
+	.lg img{
+		margin-top: .5rem;
+		height: 65%;
+	}
+	.team a{
+		padding-right: 1.2rem;
+		font-size: 12px;
+	}
+	nav a{
+		margin-right: 1rem;
+	}
+}
+
+@media screen and (max-width: 991px){
+	header {
+	    background: url(../img/main.png) no-repeat center;
+	    -moz-background-size: cover;
+	    -webkit-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+	    width: 100%;
+	    height: 650px;
+	}
+	.container{
+		max-width: 95%;
+	}
+	.menu{
+		display: none;
+	}
+    .nav{
+        margin-top: 2.5%;
+        display: block;
+        text-align: right;
+    }
+    h1{
+    	padding-top: 4rem;
+    	font-size: 32px;
+    }
+    .luidmila{
+    	display: none;
+    }
+    .phone a{
+    	font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 767px){
+	header{
+		background: url('../img/main_small.png') no-repeat center;
+		-moz-background-size: cover; /* Firefox 3.6+ */
+	    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+	    -o-background-size: cover; /* Opera 9.6+ */
+	    background-size: cover; /* Современные браузеры */
+	    width: 100%;
+	    height: 100vh;
+	}
+}
+
+@media screen and (max-width: 575px){
+	header{
+		background: url('../img/main_smaller.png') no-repeat center;
+		-moz-background-size: cover; /* Firefox 3.6+ */
+	    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+	    -o-background-size: cover; /* Opera 9.6+ */
+	    background-size: cover; /* Современные браузеры */
+	    width: 100%;
+	    height: 80vh;
+	}
+	.head1{
+		display: none;
+	}
+	.head2{
+		display: block;
+	}
+}
