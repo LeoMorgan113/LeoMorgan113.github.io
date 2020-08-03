@@ -302,7 +302,6 @@ form .btn:focus{
 }
 .shutters{
 	margin-top: -2rem;
-	margin-left: -.5rem;
 }
 
 #screen9{
@@ -314,7 +313,7 @@ form .btn:focus{
 #screen9 form{
 	color: white;
 	text-align: center;
-	margin-top: 17%;
+	margin-top: 100px;
 }
 #screen9 h3{
 	font-size: 1.5em;
@@ -355,7 +354,6 @@ footer{
 	color: white;
 	font-size: .9em;
 	padding-left: 6.3rem;	
-	padding-top: .8rem;
 }
 .center2{
 	display: none;
@@ -400,6 +398,11 @@ footer{
 	body{
 		font-size: 17px;
 	}
+	#screen9 form {
+	    color: white;
+	    text-align: center;
+	    margin-top: 10%;
+	}
 }
 @media screen and (max-width: 1199px){
 	.container{
@@ -413,15 +416,9 @@ footer{
 	#screen8 .more {
 		margin-top: 3rem;
 	}
-	#screen9{
-		background: url('../img/scr9_1.png')no-repeat center;
-	}
-	.scr9{
-		display: none;
-	}
+	
 	#screen9 form{
 		position: relative;
-		width: 550px;
 		margin: 30% auto;
 	}
 	footer{
@@ -446,6 +443,9 @@ footer{
 	}
 	.team_text1 {
 		margin-top: 0;
+	}
+	#screen9{
+		background: url('../img/scr9_1.png')no-repeat center;
 	}
 	.scr3{
 		display: none;
@@ -481,6 +481,7 @@ footer{
 		font-size: 10px;
 	}
 	#screen9 form{
+		width: 450px;
 		margin: 12% auto;
 	}
 }
@@ -552,7 +553,7 @@ footer{
 		font-size: 13px;
 	}
 	footer{
-		margin-top: -15%;
+		margin-top: -25%;
 	}
 	footer .social{
 		font-size: 10px;
@@ -629,8 +630,15 @@ footer{
 	nav{
 		padding-top: 0.9rem;
 	}
-	.lg img, .nav img {
-		height: 70%;
+	.lg img {
+		height: 60%;
+	}
+	.phone{
+		margin-left: 0;
+		text-align: center;
+	}
+	.phone a{
+		margin-right: 0;
 	}
 	.bg_text{
 		position: relative;
@@ -753,7 +761,7 @@ footer{
 	}
 	#screen9 form{
 		width: 350px;
-		margin: 23% auto;
+		margin: 30% auto;
 	}
 	#screen6 .count {
 		width: 300px;
@@ -815,7 +823,7 @@ footer{
 	}
 	#screen9 form{
 		width: 300px;
-		margin: 23% auto;
+		margin: 40% auto;
 	}
 	#screen5 form {
 	    margin-top: 1rem;
