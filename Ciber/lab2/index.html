@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lab Work №2</title>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style_lab2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="../img/LOGO.svg" alt="Logo" class="logo">
+                <h1>Теплотехнічні характеристики будівлі, потреба у тепловій енергії на опалення, ГВП та вентилювання</h1>
+            </div>
+            <div class="col-12 wrapper">
+            <form action="count.php" method="post">
+                <div class="styled">
+                    <select name='temp_region'><option disabled selected>Виберіть регіон</option>
+                        <option value='-21'>Вінниця</option>
+                        <option value='-23'>Дніпропетровськ</option>
+                        <option value='-23'>Донецьк</option>
+                        <option value='-22'>Житомир</option>
+                        <option value='-22'>Запоріжжя</option>
+                        <option value='-19'>Бердянськ</option>
+                        <option value='-20'>Івано-Франківськ</option>
+                        <option value='-22'>Київ</option>
+                        <option value='-22'>Кропивницький</option>
+                        <option value='-25'>Луганськ</option>
+                        <option value='-20'>Луцьк</option>
+                        <option value='-19'>Львів</option>
+                        <option value='-20'>Миколаїв</option>
+                        <option value='-18'>Одеса</option>
+                        <option value='-23'>Полтава</option>
+                        <option value='-21'>Рівне</option>
+                        <option value='-16'>Сімферополь</option>
+                        <option value='-24'>Суми</option>
+                        <option value='-21'>Тернопіль</option>
+                        <option value='-28'>Ужгород</option>
+                        <option value='-23'>Харків</option>
+                        <option value='-19'>Херсон</option>
+                        <option value='-21'>Хмельницький</option>
+                        <option value='-22'>Черкаси</option>
+                        <option value='-23'>Чернігів</option>
+                        <option value='-20'>Чернівці</option>
+                    </select>
+                </div>
+                 <p>Питомі тепловтрати будівлі: <input name="q_tepl" min="0" max="500" value="250">Вт/м<sup>2</sup></p>
+                 <p>Опалювальна площа: <input name="sqr" min="0" max="2000" value="1000"> м<sup>2</sup></p>
+                <p>Кількість людей: <input name="N_people" value="2"></p>
+
+                <p>Температура вхідної води: <input name="T_input_water" value="15"> °C</p>
+                <p>Кінцева температура бака: <input name="T_end_bak" value="85"> °C</p>
+
+                <p>Температура води при прийомі душу: <input name="T_water_shower" value="15"> °C</p>
+                <p>Кількість прийомів душу: <input name="N_shower" value="15"></p>
+
+                <p>Температура води при прийомі ванни: <input name="T_water_bath" value="15"> °C</p>
+                <p>Кількість прийомів ванни: <input name="N_bath" value="15"></p>
+
+                <div id="choice">
+                    <input type="radio" name="choice" value="power_choice" onclick="check('block','none')">Розрахувати потужність нагрівача<Br>
+                    <div id="dur"  style="display: none">Задайте тривалість нагріву ємності: <input name="duration"></div>
+
+                    <input type="radio" name="choice" value="duration_choice" onclick="check('none', 'block')">Розрахувати тривалість нагріву ємності<Br>
+
+                    <div id="pwr"  style="display: none">Задайте потужність нагрівача: <input name="power"></div>
+                    <script>
+                        function check(pwr, dur){
+                            document.getElementById("dur").style.display = pwr;
+                            document.getElementById("pwr").style.display = dur;
+                        }
+                    </script>
+                </div>
+                
+                <p>Розрахункова температура в середині будівлі: <input name="T_inside_build" value="20"> °C</p>
+
+                <input class="button" type="submit" value="Отримати дані" name="submit">
+            </form>
+
+            
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+</body>
+</html>

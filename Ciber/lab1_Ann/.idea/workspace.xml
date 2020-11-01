@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a661a36-c22a-45ac-8be7-abd18622f1a2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1i2Xa5ZiIbX1PispOquMbFpLrhP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Test" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WAMP\apache2\htdocs\Lab1CompSystem" />
+      <recent name="D:\WAMP\apache2\htdocs\Lab1CompSystem\csv" />
+      <recent name="D:\WAMP\apache2\htdocs\Lab1CompSystem\inc" />
+      <recent name="D:\Bitnami\apache2\Lab1CompSystem" />
+      <recent name="D:\Bitnami\apache2\Lab1CompSystem\vendor\phpoffice\phpspreadsheet\samples" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a661a36-c22a-45ac-8be7-abd18622f1a2" name="Default Changelist" comment="" />
+      <created>1601106720331</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601106720331</updated>
+      <workItem from="1601106726093" duration="1839000" />
+      <workItem from="1601108685289" duration="16798000" />
+      <workItem from="1601193721703" duration="18424000" />
+      <workItem from="1601358298817" duration="2235000" />
+      <workItem from="1601652623406" duration="2157000" />
+      <workItem from="1601799858617" duration="16034000" />
+      <workItem from="1601884036926" duration="7160000" />
+      <workItem from="1601915087816" duration="10134000" />
+      <workItem from="1601960417200" duration="29193000" />
+      <workItem from="1602148974944" duration="28180000" />
+      <workItem from="1602224843113" duration="10719000" />
+      <workItem from="1602482257444" duration="1348000" />
+      <workItem from="1603560047438" duration="1066000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601802521248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601802521248" />
+    <state x="1283" y="275" key="FileChooserDialogImpl" timestamp="1603560221499">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1283" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603560221499" />
+    <state x="1337" y="443" key="NewPhpFileDialog" timestamp="1602242584691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1337" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602242584690" />
+    <state x="1181" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603560198304">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1181" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603560198304" />
+    <state x="604" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601995221581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="604" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601995221581" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1602185169486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602185169486" />
+    <state x="1147" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1602172298504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1147" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602172298504" />
+  </component>
+</project>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<title>Main</title>
+	<style>
+		body{
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			font-family: 'Lato';
+			color: #004;
+		    background: url('img/clouds.png') repeat-x 0 90% fixed,
+		                linear-gradient(to top, #0FD2F4, #0FD2F4) fixed;
+		    animation: text 60s linear infinite;
+		    -webkit-animation: text 60s linear infinite;
+		}
+		@keyframes text {
+		    from { background-position: -1430px 30%, 0 0;}
+		    to { background-position: 0 100%, 0 0; }
+		}
+		@-webkit-keyframes text {
+		    from { background-position: -1430px 30%, 0 0;}
+		    to { background-position: 0 100%, 0 0; }
+		}
+		select{
+			font-size: 18px;
+			border-radius: 0;
+			border: 1px solid #003;
+			background: #FFF;
+			margin: 10px;
+		}
+		input{
+			font-size: 18px;
+			border-radius: 0;
+			border: none;
+			background: #0012F4;
+			color: #FFF200;
+			padding: 5px 10px;
+		}
+		h4{
+			margin: 10px 0 0;
+		}
+		#MNTH{
+			display: none;
+		}
+		#p_prldr{
+			position: fixed;
+			left: 0;
+			top: 0;
+			right:0;
+			bottom:0;
+			background: #00CCF9;
+			z-index: 30;
+		} 
+		.contpre small{
+			font-size:25px;
+		} 
+		.contpre{
+			width: 250px;
+			height: 100px;
+			position: absolute;
+			left: 50%;top: 48%;
+			margin-left:-125px;
+			margin-top:-75px;
+			color:#fff;
+			font-size:40px;
+			letter-spacing:-2px;
+			text-align:center;
+			line-height:35px;
+		}
+		#p_prldr .svg_anm {
+			position: absolute;
+			width: 41px;
+			height: 41px;
+			background: url(img/circles.svg) center center no-repeat;
+			background-size:41px;    
+			margin: -16px 0 0 -16px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><br>Зачекайте<br><small>завантажуємось</small></div></div>
+
+	<img src="img/logo.png" alt="Logo" style="width: 250px; margin-top: 70px;">
+	<h2>Обери свою місцевість, щоб отримати інформацію.</h2>
+
+	<form action="temperature.html" method="get">
+		<select size="1" name="city" style="width: 150px;">
+		    <option disabled>Місцевість</option>
+		    <option selected value="Donetsk">Донецьк</option>
+		    <option value="Vinnitsa">Вінниця</option>
+		    <option value="Kharkiv">Харків</option>
+		    <option value="Kyiv">Київ</option>
+	   	</select>
+	   	<br>
+	   	<input name="month" type="checkbox" class="choice" id="one_month" value="0"> Обрати місяць
+	   	<input name="month" type="checkbox" class="choice" id="year" value="2012"> Обрати весь рік
+	   	<br>
+	<div id="MNTH">
+		<input type="date" name="f_month" value="2012-01-01" min="2012-01-01" max="2012-12-31"><br>
+		<input type="date" name="l_month" value="2012-01-01" min="2012-01-01" max="2012-12-31"><br>
+		<br>
+
+	</div>
+		<p><input id="btn" type="button" value="Отправить"></p>
+	</form>
+		<script>
+		$(window).on('load', function () {
+		    var $preloader = $('#p_prldr'),
+		        $svg_anm   = $preloader.find('.svg_anm');
+		    $svg_anm.fadeOut();
+		    $preloader.delay(500).fadeOut('slow');
+		});
+
+
+		$('input.choice').on('click', function (event) {
+			
+				$('#btn').attr('type','submit');;
+				var id = $(this).attr('id');
+				if($(this).prop('checked')){
+					if(id == 'one_month' || id == 'year'){        
+			            var uncheck = id == 'one_month' ? '#year' : '#one_month';
+			            $(uncheck).prop('checked', false);
+			            if($("#one_month").is(':checked'))
+						    $("#MNTH").show();  // checked
+						else
+						    $("#MNTH").hide();
+			        }
+			        $(uncheck).prop('checked', false);
+				}
+			
+
+		})
+	</script>
+</body>
+</html>

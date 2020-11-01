@@ -1,0 +1,104 @@
+.error{
+    height: 30px;
+    font-size: 14px;
+    color: #110304;
+    border: 2px solid #7e0d16;
+    background: #de654c;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin: 1% auto;
+}
+
+#timeDiv,
+#timeIntervalDiv{
+    display: none;
+
+}
+
+body{
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.wrapper{
+    font-family: 'El Messiri', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin: 5% auto ;
+    width: 50%;
+
+    border: 3px solid green;
+
+}
+
+.styled select {
+    font-family: 'El Messiri', sans-serif;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+}
+
+.styled, .styled_step{
+    font-family: 'El Messiri', sans-serif;
+    margin: 50px 25px;
+    width: 80%;
+    height: 34px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #cccccc;
+}
+.styled_step{
+    margin: 15px 25px;
+
+}
+
+
+.button{
+    font-family: 'El Messiri', sans-serif;
+    margin: 25px;
+    background: rgba(22, 170, 19, 0.66);
+    border: 2px solid rgb(16, 125, 14);
+    font-size: 16px;
+    height: 34px;
+    width: 80%;
+}
+.text_int{
+    background: burlywood;
+}
+
+
+
+.choice_table tr td div{
+    padding: 5px;
+}
+
+.arrow{
+    width: 20px;
+    background: #cccccc;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.wind_add_wrapper{
+    margin: 5% auto ;
+    width: 250px;
+}
+.graph_header{
+    margin: auto ;
+    padding: 1%;
+    text-align: center;
+    background: #f7f7f7;
+}
+.wind_add_wrapper ul {
+    list-style: square outside;
+}
+.wind_add_h{
+    padding: 5px;
+    background: #cccccc;
+}

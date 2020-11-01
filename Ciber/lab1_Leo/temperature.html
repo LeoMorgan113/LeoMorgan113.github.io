@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/xlsx.full.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.7/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.7/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/20.1.7/js/dx.all.js"></script>
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+	<title>Temperature</title>
+</head>
+<style>
+	#p_prldr{
+		position: fixed;
+		left: 0;
+		top: 0;
+		right:0;
+		bottom:0;
+		background: #00CCF9;
+		z-index: 30;
+	} 
+	.contpre small{
+		font-size:25px;
+	} 
+	.contpre{
+		width: 250px;
+		height: 100px;
+		position: absolute;
+		left: 50%;top: 48%;
+		margin-left:-125px;
+		margin-top:-75px;
+		color:#fff;
+		font-size:40px;
+		letter-spacing:-2px;
+		text-align:center;
+		line-height:35px;
+	}
+	#p_prldr .svg_anm {
+		position: absolute;
+		width: 41px;
+		height: 41px;
+		background: url(img/circles.svg) center center no-repeat;
+		background-size:41px;    
+		margin: -16px 0 0 -16px;
+	}
+	body{
+		font-family: 'Rockwell', sans-serif;
+		text-align: center;
+	}
+	.dxc-title text{
+		font-family: 'Rockwell', sans-serif;
+	}
+    .highcharts-figure, .highcharts-data-table table {
+        min-width: 360px; 
+        max-width: 660px;
+        margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+        
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+   .highcharts-exporting-group, .highcharts-credits{
+    	display: none;
+    }
+	#chart-demo {
+	    height: 500px;
+	}
+
+	#radarChart {
+	    height: 500px;
+	}
+
+	#chart-demo > .center {
+		text-align: center;
+	}
+	.dx-export-menu{
+		display: none;
+	}
+
+</style>
+<body>
+	<div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><br>Зачекайте<br><small>завантажуємо дані</small></div></div>
+
+
+	<img src="img/logo.png" alt="Logo" style="width: 250px; margin-top: 20px; margin-bottom: 30px;">
+	<h1 style="text-align:center; margin:20px;">Аналіз метеорологічних даних регіону</h1>
+	<div id="tableau">
+		<canvas id="popChart" width="600" height="300"></canvas>
+	</div>
+	<div id="tabl">
+		<canvas id="popTemp" width="500" height="200" style="margin: 100px 0;"></canvas>
+	</div>
+
+	<div class="demo-container">
+        <div id="chart-demo">
+            <div id="radarChart"></div>
+        </div>
+    </div>
+    <div >
+    	<div id="RoseWind">
+    	</div>
+    </div>
+
+
+	<div id="rose">
+		<canvas id="popRose" width="500" height="200" style="margin: 100px 0;"></canvas>
+	</div>
+	<h1>Інтенсивність сонячної інсоляції <br> на горизонтальну поверхню <br></h1>
+	<canvas id="speedChart" width="400" height="200"></canvas>
+
+	<div id="tabl">
+		<canvas id="popSunCount" width="500" height="200" style="margin: 100px 0;"></canvas>
+	</div>
+	
+	<script>	
+		$(window).on('load', function () {
+		    var $preloader = $('#p_prldr'),
+		        $svg_anm   = $preloader.find('.svg_anm');
+		    $svg_anm.fadeOut();
+		    $preloader.delay(500).fadeOut('slow');
+		});
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		let m_y = getUrlVars()["month"];
+		
+
+		let start_date = getUrlVars()["f_month"].split("-");
+		let end_date = getUrlVars()["l_month"].split("-");
+		
+		let value = parseInt(start_date[1]);
+	//	console.log('value' + value)
+		let value_l = parseInt(end_date[1]);
+		var f_date = parseInt(start_date[2]);
+		var l_date = parseInt(end_date[2]);
+		
+
+		var t = getUrlVars()["time"];
+		var t_NY = getUrlVars()["time_NY"];
+
+		var url0 = [];
+		var monthName = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень","Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+		for(var i = 0; i < 12; i++){
+			url0[i] = "Donetsk/2012-" + (i+1) + ".xlsx";
+		}
+		var time =  ["0", "0.020833333333333332", "0.041666666666666664", "0.0625", "0.08333333333333333", "0.10416666666666667", 
+			"0.125", "0.14583333333333334", "0.16666666666666666", 
+			"0.1875", "0.20833333333333334", "0.22916666666666666", 
+			"0.25", "0.2708333333333333", "0.2916666666666667", 
+			"0.3125", "0.3333333333333333", "0.3541666666666667", 
+			"0.375", "0.3958333333333333", "0.4166666666666667", 
+			"0.4375", "0.4583333333333333", "0.4791666666666667", 
+			"0.5", "0.5208333333333334", "0.5416666666666666", 
+			"0.5625", "0.5833333333333334", "0.6041666666666666", 
+			"0.625", "0.6458333333333334", "0.6666666666666666",
+			"0.6875", "0.7083333333333334", "0.7291666666666666", 
+			"0.75", "0.7708333333333334", "0.7916666666666666", 
+			"0.8125", "0.8333333333333334", "0.8541666666666666", 
+			"0.875", "0.8958333333333334", "0.9166666666666666", 
+			"0.9375", "0.9583333333333334", "0.9791666666666666"]
+		var time_NY =  ["08:00", "09:00", "10:00", "11:00", "12:00", 
+						"13:00", "14:00", "15:00", "16:00", "17:00"]
+		var time_h = ["0:00","0:30","1:00","1:30","2:00","2:30","3:00",
+		"3:30","4:00","4:30","5:00","5:30","6:00","6:30","7:00","7:30",
+		"8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30",
+		"12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30",
+		"16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30",
+		"20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30"]
+		var mDate = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		let Min_temp = [], Max_temp = [], temperature = [], uSet = [];
+		let resTemp = [], resCount = [];
+		let resSpeed = [], resSpdCount = [];
+		let windDir = [], windSpeed = [];
+		let date_time = [];
+		var sun = [], date = [], resultSun = [], resSunCount = [];
+		const makeRepeated = (arr, repeats) =>
+			  [].concat(...Array.from({ length: repeats }, () => arr));
+
+	function CreateGraphics(e){
+		var popCanvas = document.getElementById("popChart").getContext("2d");
+			var barChart = new Chart(popCanvas, {
+				  type: 'line',
+				  data: {
+				    labels: date_time,
+				    datasets: [{
+				      label: 'Temp, °C',
+				      data:temperature,
+				      backgroundColor: 'rgb(41, 120, 160, 0.5)',
+				      borderColor: '#2978A0',
+				    }],
+				},
+				options: {
+					tooltips:{
+						callbacks: {
+					        title: function(tooltipItem, data) {
+					          return  'Time: ' + data['labels'][tooltipItem[0]['index']];
+					        },
+					        label: function(tooltipItem, data) {
+					        	var temp = data['datasets'][0]['data'][tooltipItem['index']]
+					        	return 'Temp:' + temp + '°C';
+					        }
+					    },
+				        titleFontSize: 14,
+				        titleFontColor: 'rgb(88, 252, 236)',
+				        bodyFontSize: 12,
+				        displayColors: false
+					},
+					legend: {
+						display: false
+					},
+				  	responsive: true,
+				    scales: {
+				      xAxes: [{ stacked: true,
+				     	scaleLabel: {
+					        display: true,
+					        labelString: month,
+					        fontSize: 24,
+					        fontColor: "#395E66"
+					      } 
+					  }],
+				      yAxes: [{ stacked: false,
+					    gridLines: {
+					        color: "black",
+					        borderDash: [2, 5],
+					    },
+					    scaleLabel: {
+					        display: true,
+					        labelString: "Температура(в градусах)",
+					        fontColor: "#395E66"
+					    } 
+					  }]
+				    }
+				}
+			});
+
+			var popCanvas = document.getElementById("popTemp").getContext("2d");
+			var barChart = new Chart(popCanvas, {
+				  type: 'bar',
+				  data: {
+				    labels: resTemp,
+				    datasets: [{
+				      label: 'Кількість годин, год',
+				      data: resCount,
+				      backgroundColor: '#09E85E',
+				    }]
+				},
+				options: {
+					tooltips:{
+						callbacks: {
+					        title: function(tooltipItem, data) {
+					          return  'Temp: ' + data['labels'][tooltipItem[0]['index']] + ' °C';
+					        }
+					    },
+				        titleFontSize: 14,
+				        titleFontColor: 'rgb(88, 252, 236)',
+				        bodyFontSize: 12,
+				        displayColors: false
+					},
+					legend: {
+						display: false
+					},
+				  	responsive: true,
+				    scales: {
+				      xAxes: [{ stacked: true,
+				     	scaleLabel: {
+					        display: true,
+					        labelString: "Тривалість температурних режимів(°C), " + month,
+					        fontSize: 24,
+					        fontColor: "#395E66"
+					      } 
+					  }],
+				      yAxes: [{ stacked: false,
+					    gridLines: {
+					        color: "black",
+					        borderDash: [2, 5],
+					    },
+					    scaleLabel: {
+					        display: true,
+					        labelString: "Кількісь годин",
+					        fontColor: "#395E66"
+					    } 
+					  }]
+				    }
+				}
+			});
+			var popCanvas1 = document.getElementById("popRose").getContext("2d");
+			var barChart = new Chart(popCanvas1, {
+				  type: 'bar',
+				  data: {
+				    labels: resSpeed,
+				    datasets: [{
+				      label: 'Кількість годин, год',
+				      data: resSpdCount,
+				      backgroundColor: '#FF9914',
+				    }]
+				},
+				options: {
+					tooltips:{
+						callbacks: {
+					        title: function(tooltipItem, data) {
+					          return  'Speed: ' + data['labels'][tooltipItem[0]['index']] + ' м/с';
+					        }
+					    },
+				        titleFontSize: 14,
+				        titleFontColor: 'rgb(88, 252, 236)',
+				        bodyFontSize: 12,
+				        displayColors: false
+					},
+					legend: {
+						display: false
+					},
+				  	responsive: true,
+				    scales: {
+				      xAxes: [{ stacked: true,
+				     	scaleLabel: {
+					        display: true,
+					        labelString: "Розподіл вітрового потенціалу за швидкостями(м/с), " + month,
+					        fontSize: 24,
+					        fontColor: "#395E66"
+					      } 
+					  }],
+				      yAxes: [{ stacked: false,
+					    gridLines: {
+					        color: "black",
+					        borderDash: [2, 5],
+					    },
+					    scaleLabel: {
+					        display: true,
+					        labelString: "Кількість годин",
+					        fontColor: "#395E66"
+					    } 
+					  }]
+				    }
+				}
+			});
+			var speedCanvas = document.getElementById("speedChart");
+                Chart.defaults.global.defaultFontFamily = "Rockwell";
+                Chart.defaults.global.defaultFontSize = 15;
+                var barChart = new Chart(speedCanvas, {
+                  type: 'bar',
+                  data: {
+	                  labels: date,
+	                  datasets: [{
+	                    label: "ETR (W/m^2)",
+	                    display: false,
+	                    data: sun,
+	                    backgroundColor: 'red',
+	                  }]
+	              },
+                  options: {
+	                 legend: {
+						display: false
+					},
+					responsive: true,
+					    scales: {
+					      xAxes: [{ 
+					      	stacked: true,
+					     	scaleLabel: {
+						        display: true,
+						        labelString: month,
+						        fontSize: 24,
+						        fontColor: "#395E66"
+						      } 
+						  }],
+					      yAxes: [{ 
+					      	stacked: false,
+					      	ticks: {
+					      		min: 0,
+			                   stepSize: 1
+			                },
+						    gridLines: {
+						        color: "black",
+						        borderDash: [2, 5],
+						    },
+						    scaleLabel: {
+						        display: true,
+						        labelString: "Сонячна інсоляція, W/m^2",
+						        fontColor: "#395E66"
+						    } 
+						  }]
+					    }
+                  }
+                
+            });
+
+            	var popCanvas1 = document.getElementById("popSunCount").getContext("2d");
+				var barChart = new Chart(popCanvas1, {
+					  type: 'bar',
+					  data: {
+					    labels: resSun,
+					    datasets: [{
+					      label: 'Кількість годин, год',
+					      display: false,
+					      data: resSunCount,
+					      backgroundColor: '#FF9914',
+					    }]
+					},
+					options: {
+						tooltips:{
+						callbacks: {
+					        title: function(tooltipItem, data) {
+					          return  'Сонячна інсоляція: ' + data['labels'][tooltipItem[0]['index']] + ' W/m^2';
+					        }
+					    },
+				        titleFontSize: 14,
+				        titleFontColor: 'rgb(88, 252, 236)',
+				        bodyFontSize: 12,
+				        displayColors: false
+					},
+						legend: {
+							display: false
+						},
+					  	responsive: true,
+					    scales: {
+					      xAxes: [{ 
+					      	stacked: true,
+					     	scaleLabel: {
+						        display: true,
+						        labelString: "Тривалість режимів сонячної інсоляції, W/m^2",
+						        fontSize: 24,
+						        fontColor: "#395E66"
+						      } 
+						  }],
+					      yAxes: [{ 
+					      	stacked: false,
+					      	ticks: {
+					      		min: 0,
+			                   stepSize: 1
+			                },
+						    gridLines: {
+						        color: "black",
+						        borderDash: [2, 5],
+						    },
+						    scaleLabel: {
+						        display: true,
+						        labelString: "Кількість годин",
+						        fontColor: "#395E66"
+						    } 
+						  }]
+					    }
+					}
+				});
+		}
+
+		function CreateWind(filtDir, filtSpeed){
+			let East = [], West = [], North = [], South = [], 
+				SW = [], SE = [], NW = [], NE = [], VARBL = 0, QT = 0;
+			
+			for(var i = 0; i < filtDir.length; i++){
+				if(filtDir[i] == 'Северный'){
+					North[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'Южный'){
+					South[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'Восточный'){
+					East[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'Западный'){
+					West[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'С-В'){
+					NE[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'С-З'){
+					NW[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'Ю-В'){
+					SE[i] = filtSpeed[i];
+				}else if(filtDir[i] == 'Ю-З'){
+					SW[i] = filtSpeed[i];
+				}else{
+					VARBL++;
+				}
+				if(filtSpeed[i] == 0){
+					QT++;
+				}
+			}
+			let NorthF = North.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+			let NEF = NE.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+			let EastF = East.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+
+			let SEF = SE.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+
+			let SouthF = South.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+
+			let SWF = SW.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+
+			let WestF = West.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+
+			let NWF = NW.filter(function (el) {
+				return el != null;
+			}).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1;
+			  return acc;
+			}, {});
+			
+			
+			var w1 = WIND(NorthF);
+			var w2 = WIND(NEF);
+			var w3 = WIND(EastF);
+			var w4 = WIND(SEF);
+			var w5 = WIND(SouthF);
+			var w6 = WIND(SWF);
+			var w7 = WIND(WestF);
+			var w8 = WIND(NWF);
+			var sum_all = w1[4] + w2[4] + w3[4] + w4[4] + w5[4] 
+						+ w6[4] + w7[4] + w8[4];
+			var sum = sum_all + VARBL + QT;
+
+
+			document.getElementById('RoseWind').innerHTML = "Змінний вітер:  " + parseFloat(((VARBL*100)/sum).toFixed(2)) + "%, " + VARBL/2 + ' годин.' + '<br>' + 
+				"Штиль:  " + parseFloat(((QT*100)/sum).toFixed(2)) + "%, " + QT/2 + ' годин.';
+			var dataSource = [{
+		        period: month,
+		        values: [{
+		            arg: "Північ",
+		            val1:parseFloat(((w1[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w1[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w1[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w1[3] * 100) / sum_all).toFixed(2))
+		        },  {
+		            arg: "Пн-С",
+		            val1:parseFloat(((w2[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w2[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w2[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w2[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Схід",
+		            val1:parseFloat(((w3[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w3[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w3[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w3[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Пд-С",
+		            val1:parseFloat(((w4[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w4[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w4[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w4[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Південь",
+		            val1:parseFloat(((w5[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w5[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w5[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w5[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Пд-З",
+		            val1:parseFloat(((w6[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w6[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w6[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w6[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Захід",
+		            val1:parseFloat(((w7[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w7[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w7[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w7[3] * 100) / sum_all).toFixed(2))
+		        }, {
+		            arg: "Пн-З",
+		            val1:parseFloat(((w8[0] * 100) / sum_all).toFixed(2)),
+		            val2:parseFloat(((w8[1] * 100) / sum_all).toFixed(2)),
+		            val3:parseFloat(((w8[2] * 100) / sum_all).toFixed(2)),
+		            val4:parseFloat(((w8[3] * 100) / sum_all).toFixed(2))
+		        }]
+		    }];
+		$(function(){
+			var radar = $("#radarChart").dxPolarChart({
+		        dataSource: dataSource[0].values,
+		        title: "Роза вітрів, " + month,
+		        commonSeriesSettings: {
+		            type: "stackedbar"
+		        },
+		        margin: {
+		            bottom: 50,
+		            left: 100
+		        },
+		        argumentAxis: {
+		            discreteAxisDivisionMode: "crossLabels",
+		            firstPointOnStartAngle: true
+		        },
+		        valueAxis: {
+		            valueMarginsEnabled: false
+		        },
+		        "export": {
+		            enabled: true
+		        },
+		        tooltip: {
+		        	enabled: true,
+		            shared: true,
+		            format: {
+		                type: "largeNumber",
+		                precision: 1
+		            },
+		            customizeTooltip: function (arg) {
+		                var items = arg.valueText.split("\n"),
+		                    color = arg.point.getColor();
+		                $.each(items, function(index, item) {
+		                    if(item.indexOf(arg.seriesName) === 0) {
+		                        items[index] = $("<span>")
+		                                        .text(item)
+		                                        .addClass("active")
+		                                        .css("color", color)
+		                                        .prop("outerHTML");
+		                    }
+		                });
+		                return { text: items.join(" % \n") };
+		            }
+					
+		        },
+		        series: [{ valueField: "val1", name: "< 5 м/с", color: "#29BF12"},
+		                { valueField: "val2", name: "5 - 8 м/с", color: "#FEF22B"},
+		                { valueField: "val3", name: "9 - 10 м/с", color: "#FF9914"},
+		                { valueField: "val4", name: "> 11 м/с", color: "#F21B3F"},
+		        ]
+		    	}).dxPolarChart("instance");
+			});
+
+		}
+
+		function WIND(arr){
+			var c1 = 0, c2 = 0, c3 = 0, c4 = 0;
+			var count = [];
+			for(var key in arr){
+				if( key >= 0 && key < 5){
+					c1+= arr[key];
+				}else if( key >= 5 && key < 9){
+					c2+= arr[key];
+				}else if( key >= 9  && key < 11){
+					c3+= arr[key];
+				}else{
+					c4+= arr[key];
+				}
+			}
+			var sum = c1 + c2 + c3 + c4;
+			count[0] = c1;
+			count[1] = c2;
+			count[2] = c3;
+			count[3] = c4;
+			count[4] = sum;
+			return count;
+		}
+
+		function OnLoad1(e) {
+			var data = new Uint8Array(req.response);
+			var workbook = XLSX.read(data, {type:"array"});
+			var first_sheet_name = workbook.SheetNames[0];
+			var worksheet = workbook.Sheets[first_sheet_name];
+			var cont = XLSX.utils.sheet_to_json(worksheet);
+			
+
+			let start_month = parseInt(start_date[1]);
+			let end_month = parseInt(end_date[1]);
+			
+			let start_day = parseInt(start_date[2]);
+			let end_day = parseInt(end_date[2]);
+			
+
+			let monthDate = [];
+			let windDir = [];
+			let windSpeed = [], windS = [], all_month = [];
+			var i = 1;
+			let s = [];
+            
+		
+			while(i < cont.length){
+				i++;
+				if(start_month == cont[i].month && start_day == cont[i].date){
+					i++;
+					break;
+				}
+				
+			}
+			var start_iterator = i;
+			
+			i++;
+			var j = 0;
+			for (; i < cont.length; i++) {
+				if(end_month == cont[i].month && end_day < cont[i].date){
+					break;
+				}
+				monthDate[j] = cont[i].date;
+				temperature[j] = cont[i].T;
+				windS[j] = cont[i].FF;
+				all_month[j] = cont[i].month;
+				windDir[j] = cont[i].dd;
+				windSpeed[j] = cont[i].FF;
+				s[j] = cont[i].ETR;
+				j++;
+				
+			}
+			var end_iterator =i+1;
+
+            
+            sun = s.filter(function (el) {
+                return el != null;
+            });
+			resultSun = sun.reduce(function(acc, el) {
+				if(el != 0){
+			  		acc[el] = (acc[el] || 0) + 1;
+				}
+			  return acc;
+			}, {});
+
+			resSun = Object.keys(resultSun);
+			resSunCount = Object.values(resultSun);
+			
+
+
+			var d = (end_iterator - start_iterator)/48 + 1;
+			let test = makeRepeated(time_h, d);
+			
+			let d_t = [], mD = [];
+			
+
+
+			for(var i = 0; i < all_month.length; i++){
+				if(all_month[i] < 10){
+					date_time[i] = test[i] + ' ,' + monthDate[i] 
+					+ '.0' + all_month[i];
+					date[i] = monthDate[i] + '.0' + all_month[i];
+				}else {
+					date_time[i] = test[i] + ' ,' + monthDate[i] 
+					+ '.' + all_month[i];
+					date[i] = + monthDate[i] + '.' + all_month[i];
+				}
+				
+			}
+			var f_date = 1;
+			var l_date = mDate[value-1];
+			var result = temperature.slice((f_date-1)*48, (l_date)*48).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1/2;
+			  return acc;
+			}, {});
+
+			var resultSpeed = windS.slice((f_date-1)*48, (l_date)*48).reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1/2;
+			  return acc;
+			}, {});
+			resTemp = Object.keys(result);
+			resCount = Object.values(result);
+
+			resSpeed = Object.keys(resultSpeed);
+			resSpdCount = Object.values(resultSpeed);
+			
+			var filtDir = windDir.filter(function (el) {
+				return el != null;
+			});
+			var filtSpeed = windSpeed.filter(function (el) {
+				return el != null;
+			});
+			
+			let temp = [];
+			const chunkArray = (arr, cnt) => arr.reduce((prev, cur, i, a) => !(i % cnt) ? prev.concat([a.slice(i, i + cnt)]) : prev, []);
+			temp = chunkArray(temperature, 48);
+			let unique = [];
+			unique = Array.from(new Set(monthDate));
+			
+			uSet = mD;
+			
+			CreateGraphics();
+			CreateWind(filtDir, filtSpeed);
+		}
+		
+
+		function OnLoad2(e) {
+			var data = new Uint8Array(req.response);
+			var workbook = XLSX.read(data, {type:"array"});
+			var first_sheet_name = workbook.SheetNames[0];
+			var worksheet = workbook.Sheets[first_sheet_name];
+			var cont = XLSX.utils.sheet_to_json(worksheet);
+			
+			let allDate = [];
+			let allTemp = [];
+			let monthDate = [];
+			let windS = [];
+			let s = []
+			for (var i = 0; i < cont.length; i++) {
+				allDate[i] = cont[i].date;
+				temperature[i] = cont[i].T;
+				windS[i] = cont[i].FF;
+				s[i] = cont[i].ETR;
+			}
+			sun = s.filter(function (el) {
+                return el != null;
+            });
+			resultSun = sun.reduce(function(acc, el) {
+				if(el != 0){
+			  		acc[el] = (acc[el] || 0) + 1;
+				}
+			  return acc;
+			}, {});
+
+			resSun = Object.keys(resultSun);
+			resSunCount = Object.values(resultSun);
+
+			
+			let test = makeRepeated(time_h, 366);
+			var j = 0;
+			for(var i = 0; i < cont.length; i++){
+				if(cont[i].month < 10){
+					date_time[i] = test[i] + ' ,' + cont[i].date 
+					+ '.0' + cont[i].month;
+					date[i] = cont[i].date + '.0' + cont[i].month;
+				}else {
+					date_time[i] = test[i] + ' ,' + cont[i].date 
+					+ '.' + cont[i].month;
+					date[i] = cont[i].date + '.' + cont[i].month;
+				}
+				
+			}
+
+			var result = temperature.reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1/2;
+			  return acc;
+			}, {});
+			var resultSpeed = windS.reduce(function(acc, el) {
+			  acc[el] = (acc[el] || 0) + 1/2;
+			  return acc;
+			}, {});
+			resTemp = Object.keys(result);
+			resCount = Object.values(result);
+
+			resSpeed = Object.keys(resultSpeed);
+			resSpdCount = Object.values(resultSpeed);
+			
+			
+			
+			for(var i = 0; i < cont.length; i++){
+				windDir[i] = cont[i].dd;
+				windSpeed[i] = cont[i].FF;
+			}
+
+			var filtDir = windDir.filter(function (el) {
+				return el != null;
+			});
+			var filtSpeed = windSpeed.filter(function (el) {
+				return el != null;
+			});
+
+			const chunkArray = (arr, cnt) => arr.reduce((prev, cur, i, a) => !(i % cnt) ? prev.concat([a.slice(i, i + cnt)]) : prev, []);
+			
+
+			CreateGraphics();
+			CreateWind(filtDir, filtSpeed);
+		}
+
+		if(m_y != '2012'){
+			var URL = "Donetsk/fullList.xlsx";
+			var req = new XMLHttpRequest();
+			var month;
+			if(value == value_l){
+				month = monthName[value-1]
+			}else{
+				month = monthName[value-1] + '-' + monthName[value_l-1];
+			}
+			
+			req.open("GET", URL, true);
+			req.responseType = "arraybuffer";
+			
+			req.onload = OnLoad1;
+		}else{
+			var URL = "Donetsk/fullList.xlsx";
+			var req = new XMLHttpRequest();
+			var month = "2012 рік";
+			req.open("GET", URL, true);
+			req.responseType = "arraybuffer";
+			req.onload = OnLoad2;
+		}
+		
+		req.send();
+
+		
+		
+	</script>		
+	
+</body>
+</html>
