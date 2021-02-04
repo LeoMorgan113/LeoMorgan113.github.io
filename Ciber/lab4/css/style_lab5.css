@@ -1,0 +1,101 @@
+.error{
+    height: 30px;
+    font-size: 14px;
+    color: #110304;
+    border: 2px solid #7e0d16;
+    background: #de654c;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin: 1% auto;
+}
+
+#timeDiv,
+#timeIntervalDiv{
+    display: none;
+
+}
+body{
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    font-size: 16px;
+}
+h1{
+    width: 900px;
+    font-size: 28px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 30px;
+}
+.logo{
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.table{
+    color: #fff;
+}
+.wrapper{
+    text-align: center;
+    padding: 15px;
+    margin: 30px auto;
+    border: 3px solid #ffffff;
+}
+.wrapper p{
+    margin: 25px 0;
+}
+.styled select {
+    background: transparent;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+}
+.styled{
+    width: 30%;
+    margin: 20px auto;
+    height: 34px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #cccccc;
+}
+.button{
+    margin: 25px;
+    background: #FB8B24;
+    font-size: 16px;
+    height: 40px;
+    width: 30%;
+    border: none;
+}
+#btn{
+    margin: 25px;
+    background: #FB8B24;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    padding: 15px;
+}
+.btn_chs{
+    margin:0;
+}
+#dur, #pwr{
+    margin: 15px 0;
+}
+input{
+    background: #000;
+    border: 1px #fff solid;
+    color: #fff;
+    margin: 0 5px;
+    padding: 3px 7px;
+    width: 100px;
+}
+#choice{
+    text-align: left;
+    margin: 0 auto;
+}
+input[type='radio']{
+    width: 15px;
+    margin-top: 15px;
+}

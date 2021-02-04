@@ -11,61 +11,45 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <img src="../img/LOGO.svg" alt="Logo" class="logo">
+                <a href="../index.html"><img src="../img/LOGO.svg" alt="Logo" class="logo"></a>
                 <h1>Теплотехнічні характеристики будівлі, потреба у тепловій енергії на опалення, ГВП та вентилювання</h1>
             </div>
-            <div class="col-12 wrapper">
+            <div class="col-6" style="display:inline-flex;">
+                <a href="../index.html"><img src="../img/Arrow_left.png" alt="Left"></a>
+            </div>
+            <div class="col-6" style="display:flex; justify-content: flex-end;"> 
+                <a href="../lab3/index.php" ><img src="../img/Arrow_right.png" alt="Right" ></a>
+            </div>
+        <div class="col-12 wrapper">
+            <div id="toNewWindow">
             <form action="count.php" method="post">
-                <div class="styled">
-                    <select name='temp_region'><option disabled selected>Виберіть регіон</option>
-                        <option value='-21'>Вінниця</option>
-                        <option value='-23'>Дніпропетровськ</option>
-                        <option value='-23'>Донецьк</option>
-                        <option value='-22'>Житомир</option>
-                        <option value='-22'>Запоріжжя</option>
-                        <option value='-19'>Бердянськ</option>
-                        <option value='-20'>Івано-Франківськ</option>
-                        <option value='-22'>Київ</option>
-                        <option value='-22'>Кропивницький</option>
-                        <option value='-25'>Луганськ</option>
-                        <option value='-20'>Луцьк</option>
-                        <option value='-19'>Львів</option>
-                        <option value='-20'>Миколаїв</option>
-                        <option value='-18'>Одеса</option>
-                        <option value='-23'>Полтава</option>
-                        <option value='-21'>Рівне</option>
-                        <option value='-16'>Сімферополь</option>
-                        <option value='-24'>Суми</option>
-                        <option value='-21'>Тернопіль</option>
-                        <option value='-28'>Ужгород</option>
-                        <option value='-23'>Харків</option>
-                        <option value='-19'>Херсон</option>
-                        <option value='-21'>Хмельницький</option>
-                        <option value='-22'>Черкаси</option>
-                        <option value='-23'>Чернігів</option>
-                        <option value='-20'>Чернівці</option>
+
+                <div class="styled" style="display:none;">
+                    <select name='temp_region' required><option disabled >Виберіть регіон</option>
+                        <option selected value='-22@../lab1_Ann/databases/Kyiv'>Київ</option>
                     </select>
                 </div>
-                 <p>Питомі тепловтрати будівлі: <input name="q_tepl" min="0" max="500" value="250">Вт/м<sup>2</sup></p>
-                 <p>Опалювальна площа: <input name="sqr" min="0" max="2000" value="1000"> м<sup>2</sup></p>
-                <p>Кількість людей: <input name="N_people" value="2"></p>
 
-                <p>Температура вхідної води: <input name="T_input_water" value="15"> °C</p>
-                <p>Кінцева температура бака: <input name="T_end_bak" value="85"> °C</p>
+                 <p>Питомі тепловтрати будівлі: <input required name="q_tepl" min="0" max="500" value="250">Вт/м<sup>2</sup></p>
+                 <p>Опалювальна площа: <input required name="sqr" min="0" max="2000" value="50"> м<sup>2</sup></p>
+                <p>Кількість людей: <input required name="N_people" value="2"></p>
 
-                <p>Температура води при прийомі душу: <input name="T_water_shower" value="15"> °C</p>
-                <p>Кількість прийомів душу: <input name="N_shower" value="15"></p>
+                <p>Температура вхідної води: <input required name="T_input required_water" value="15"> °C</p>
+                <p>Кінцева температура бака: <input required name="T_end_bak" value="85"> °C</p>
 
-                <p>Температура води при прийомі ванни: <input name="T_water_bath" value="15"> °C</p>
-                <p>Кількість прийомів ванни: <input name="N_bath" value="15"></p>
+                <p>Температура води при прийомі душу: <input required name="T_water_shower" value="70"> °C</p>
+                <p>Кількість прийомів душу: <input required name="N_shower" value="10"></p>
+
+                <p>Температура води при прийомі ванни: <input required name="T_water_bath" value="65"> °C</p>
+                <p>Кількість прийомів ванни: <input required name="N_bath" value="15"></p>
 
                 <div id="choice">
-                    <input type="radio" name="choice" value="power_choice" onclick="check('block','none')">Розрахувати потужність нагрівача<Br>
-                    <div id="dur"  style="display: none">Задайте тривалість нагріву ємності: <input name="duration"></div>
+                    <input type="radio" name="choice1" value="power_choice" onclick="check('block','none')">Розрахувати потужність нагрівача<Br>
+                    <div id="dur"  style="display: none">Задайте тривалість нагріву ємності: <input name="duration"> год</div>
 
-                    <input type="radio" name="choice" value="duration_choice" onclick="check('none', 'block')">Розрахувати тривалість нагріву ємності<Br>
+                    <input type="radio" name="choice1" value="duration_choice" onclick="check('none', 'block')">Розрахувати тривалість нагріву ємності<Br>
 
-                    <div id="pwr"  style="display: none">Задайте потужність нагрівача: <input name="power"></div>
+                    <div id="pwr"  style="display: none">Задайте потужність нагрівача: <input name="power"> кВт</div>
                     <script>
                         function check(pwr, dur){
                             document.getElementById("dur").style.display = pwr;
@@ -74,18 +58,90 @@
                     </script>
                 </div>
                 
-                <p>Розрахункова температура в середині будівлі: <input name="T_inside_build" value="20"> °C</p>
+                <p>Розрахункова температура в середині будівлі: <input name="T_inside_build" value="18"> °C</p>
 
+                <div id="choice2">
+                    <h3>Тарифи на опалення</h3>
+                    <input type="radio" name="choice" value="tarif" onclick="check0('block')">Змінити вартість
+                    <input type="radio" name="choice" value="tarif" onclick="check0('none')">Розрахувати за базовими тарифами<br>
+                    <div id="change" style="display: none"> 
+                        <div>
+                            <p>
+                                Тариф газу: 
+                            </p>
+                            <input class="save" name="gas"> грн/м³
+                        </div>
+                        <div>
+                            <p>
+                                Тариф вугілля: 
+                            </p>
+                            <input class="save" name="coal"> грн/т
+                        </div>
+                        <div>
+                            <p>
+                                Тариф електроенергії: 
+                            </p>
+                            <input class="save" name="electric"> грн/кВт·год
+                        </div>
+                        <div>
+                            <p>
+                                Тариф дерева: 
+                            </p>
+                            <input class="save" name="wood"> грн/т
+                        </div>
+                        
+                        <div>
+                            <p>
+                                Тариф брикетів: 
+                            </p>
+                            <input class="save" name="briquette"> грн/т
+                        </div>
+                        <div>
+                            <p>
+                                Тариф централізованного опалення: 
+                            </p>
+                            <input class="save" name="heating"> грн/Гкал
+                        </div>
+                    </div>
+                    <div id="basic">  
+                        
+                    </div>
+
+                    <script>
+                        function check0(change){
+                            document.getElementById("change").style.display = change;
+                        }
+                        let inp = document.querySelectorAll('.save'),
+                        vals = localStorage.getItem('vals') ? localStorage.getItem('vals').split`,` : '';
+
+                    for(let i = 0; i < inp.length; i++) vals[i] ? inp[i].value = vals[i] : '';
+                    window.addEventListener('beforeunload',() => localStorage.setItem('vals', [...inp].map(e => e.value)) );
+                    </script>
+                </div>
+            </div>
                 <input class="button" type="submit" value="Отримати дані" name="submit">
             </form>
-
-            
+            <br><a href="javascript:;" id="print" style="color:white;">Завантажити звіт</a>
         </div>
+        
         </div>
     </div>
-
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        function nWin() {
+          var w = window.open();
+          var html = $("#toNewWindow").html();
+
+            $(w.document.body).html(html);
+            w.print();
+        }
+
+        $(function() {
+            $("a#print").click(nWin);
+        });
+    </script>
 </body>
 </html>

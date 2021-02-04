@@ -78,8 +78,43 @@ input{
     padding: 3px 7px;
     width: 150px;
 }
+input[type=radio]{
+    width: 50px;
+}
 #choice{
     text-align: left;
     width: 50%;
     margin: 0 auto;
+}
+#choice2{
+    text-align: center;
+    width: 100%;
+    margin: 70px auto;
+}
+#choice2 h3{
+    margin: 30px 0;
+}
+#change div{
+    text-align: left;
+    width: 340px;
+    display: inline-block;
+}
+#change div:nth-child(1), #change div:nth-child(4){
+    margin-left: 50px;
+}
+#change p{
+    margin: 30px 0 10px;
+}
+#basic{
+    margin-top: 50px;
+}
+#btn button{
+    background: #fff;
+    color: #000; 
+    padding: 10px;
+    border: none;
+    cursor:pointer
+}
+#btn a:hover{
+    background: #FB8B24;
 }

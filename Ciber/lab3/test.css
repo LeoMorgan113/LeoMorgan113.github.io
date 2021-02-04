@@ -1,0 +1,21 @@
+.form-group {
+    display: inline-block;
+}
+
+
+.button_style{
+    background: #FB8B24;
+    font-size: 14px;
+    width: 30%;
+    height: 35px;
+    border: none;
+}
+
+.button-add-row{
+    background: #FB8B24;
+    font-size: 16px;
+    width: 100%;
+    height: 35px;
+    border: none;
+}
+

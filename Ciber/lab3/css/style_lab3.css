@@ -1,0 +1,219 @@
+.error{
+    height: 30px;
+    font-size: 14px;
+    color: #110304;
+    border: 2px solid #7e0d16;
+    background: #de654c;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin: 1% auto;
+}
+
+#timeDiv,
+#timeIntervalDiv{
+    display: none;
+
+}
+body{
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    font-size: 16px;
+}
+h1{
+    width: 900px;
+    font-size: 28px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 30px;
+}
+h3{
+    text-align: center;
+    margin: 30px;
+}
+
+.table{
+    color: white;
+}
+.table td, .table th {
+    padding: 10px;
+    vertical-align: text-bottom;
+    font-size: 12px;
+    border-top: 1px solid #dee2e6;
+}
+.logo{
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.wrapper{
+    text-align: center;
+    padding: 15px;
+    margin: 30px auto;
+    border: 3px solid #ffffff;
+}
+.wrapper p{
+    margin: 25px 0;
+}
+.styled select {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+}
+.styled{
+    margin: 5px;
+    height: 34px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.button{
+    margin: 25px;
+    background: #FB8B24;
+    font-size: 16px;
+    height: 40px;
+    width: 30%;
+    border: none;
+}
+#dur, #pwr{
+    margin: 15px 0;
+}
+input{
+    background: #000;
+    border: 1px #fff solid;
+    color: #fff;
+    margin: 0 5px;
+    padding: 3px 7px;
+}
+#choice{
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.child_input{
+    display: inline-block;
+    margin: 10px;
+}
+
+.error{
+    height: 30px;
+    font-size: 14px;
+    color: #110304;
+    border: 2px solid #7e0d16;
+    background: #de654c;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin: 1% auto;
+}
+
+.btn_chs{
+    margin: 0;
+}
+.btn_add{
+    margin: 0;
+    width: 40px;
+    height: 40px;
+}
+.btn_del{
+    margin: 8px;
+    width: 30px;
+    height: 30px;
+}
+#add_button{
+    width: 20%;
+    font-size: 13px;
+}
+
+
+ body span.switcher {
+     position: relative;
+     width: 200px;
+     height: 50px;
+     border-radius: 25px;
+     margin: 20px 0;
+}
+ body span.switcher input {
+     appearance: none;
+     position: relative;
+     width: 100px;
+     height: 30px;
+     border-radius: 25px;
+     background-color: #1e1e1e;
+     outline: none;
+     font-family: 'Oswald', sans-serif;
+}
+ body span.switcher input:before, body span.switcher input:after {
+     z-index: 2;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     color: #fff;
+}
+ body span.switcher input:before {
+     content: 'ON';
+     left: 20px;
+}
+ body span.switcher input:after {
+     content: 'OFF';
+     right: 20px;
+}
+ body span.switcher label {
+     z-index: 1;
+     position: absolute;
+     top: 10px;
+     bottom: 10px;
+     border-radius: 20px;
+}
+ body span.switcher.switcher-2 {
+     overflow: hidden;
+}
+ body span.switcher.switcher-2 input {
+     transition: background-color 0s 0.5s;
+}
+ body span.switcher.switcher-2 input:before {
+     color: #1e1e1e;
+}
+ body span.switcher.switcher-2 input:after {
+     color: #fff;
+}
+ body span.switcher.switcher-2 input:checked {
+     background-color: #fff;
+}
+ body span.switcher.switcher-2 input:checked + label {
+     background: #fff;
+     animation: turn-on 0.5s ease-out;
+}
+ @keyframes turn-on {
+     0% {
+         left: 100%;
+    }
+     100% {
+         left: 0%;
+    }
+}
+ body span.switcher.switcher-2 input:not(:checked) {
+     background: #1e1e1e;
+}
+ body span.switcher.switcher-2 input:not(:checked) + label {
+     background: #1e1e1e;
+     animation: turn-off 0.5s ease-out;
+}
+ @keyframes turn-off {
+     0% {
+         right: 100%;
+    }
+     100% {
+         right: 0%;
+    }
+}
+ body span.switcher.switcher-2 label {
+    top: -18px;
+    left: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+}

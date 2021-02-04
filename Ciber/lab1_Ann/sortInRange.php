@@ -7,8 +7,8 @@ function countInRange($numbers,$lowest,$highest){
     );
 }
 
-$numbers = ['arr','arr',1,1,1,3,10,11,12, 19, 20];
+/*$numbers = ['arr','arr',1,1,1,3,10,11,12, 19, 20];
 
 echo countInRange($numbers,1,3)."<br>"; // echoes 6
 echo countInRange($numbers,4,18)."<br>"; // echoes 7
-echo countInRange($numbers,19,20)."<br>"; //echoes 0
+echo countInRange($numbers,19,20)."<br>"; //echoes 0*/

@@ -1,15 +1,15 @@
 <?php
 
 if (!isset($_POST['submit'])){
-    header("Location: ../Lab1CompSystem/index.php?error=enterButton");
+    header("Location: ../lab1_Ann/index.php?error=enterButton");
     exit();
 }
 if (!isset($_POST['path'])){
-    header("Location: ../Lab1CompSystem/index.php?error=chooseCity");
+    header("Location: ../lab1_Ann/index.php?error=chooseCity");
     exit();
 }
 if(strtotime($_POST['start']) > strtotime($_POST['end'])){
-    header("Location: ../Lab1CompSystem/index.php?errorDate=startBigEnd");
+    header("Location: ../lab1_Ann/index.php?errorDate=startBigEnd");
     exit();
 }
 
