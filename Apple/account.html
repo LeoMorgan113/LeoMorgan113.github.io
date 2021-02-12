@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Личный кабинет</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="imgs/favicon/favicon.ico" />
+    <link href="css/owl.carousel.css" rel="stylesheet">
+	<link href="css/owl.theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+	<header>
+	<nav class="navbar navbar-expand-md">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="index.html" id="logo">Logo</a>
+	    <div class="nav-item" id="bag0">
+	      	<a href="" class="dropdown_btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="imgs/icons/bag.svg" alt=""></a>
+	      		<span>2</span>
+				<ul class="dropdown-menu" id="dropdown_else_sm">
+				    <li>
+				    	<table class="dropdown-item">
+				    	<tr>
+				    		<td>
+				    			<img src="imgs/iPhone12.png" alt="iPhone12">
+				    		</td>
+				    		<td>
+				    			iPhone 12 Pro 128 Гб <br>(Тихоокеанский синий)
+				    		</td>
+				    		<td id="price">
+				    			37 299 грн
+				    		</td>
+				    		<td>
+				    			<a href="">
+				    				<img src="imgs/icons/cross.svg" alt="cross" style="width:20px; height:20px;">
+				    			</a>
+				    		</td>
+				    	</tr>
+				    	</table>
+				    </li>
+				    <hr>
+				    <li>
+				    	<table class="dropdown-item">
+				    	<tr>
+				    		<td>
+				    			<img src="imgs/iPhone12.png" alt="iPhone12">
+				    		</td>
+				    		<td>
+				    			iPhone 12 Pro 128 Гб <br>(Тихоокеанский синий)
+				    		</td>
+				    		<td id="price">
+				    			37 299 грн
+				    		</td>
+				    		<td>
+				    			<a href="">
+				    				<img src="imgs/icons/cross.svg" alt="cross" style="width:20px; height:20px;">
+				    			</a>
+				    		</td>
+				    	</tr>
+				    	</table>
+				    </li>
+				    <hr>
+				    <li id="bag0_btn"><a class="dropdown-item btn_in" href="bag.html">Перейти в корзину</a></li>
+				</ul>
+	    </div>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <img src="imgs/icons/nav.svg" alt="">
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-lg-0" id="menu">
+				<li class="nav-item" id="form_small">
+					<form class="d-flex">
+				        <input id="search_input" class="search" type="search" placeholder="Поиск" aria-label="Search">
+				        <button class="btn btn_s" type="submit" id="search_btn"><img src="imgs/icons/search.svg" alt="Search"></button>
+				    </form>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Mac</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="products_list.html">iPhone</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">iPad</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Watch</a>
+				</li>
+				<li class="nav-item" id="else_menu">
+					<button type="button" class="dropdown_btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="else">
+					  	Другое
+					</button>
+					<hr>
+					<ul class="dropdown-menu" id="dropdown_else">
+					    <li><a class="dropdown-item" href="#">О магазине</a></li>
+					    <li><a class="dropdown-item" href="#">Оплата и доставка</a></li>
+					    <li><a class="dropdown-item" href="#">Обмен и возврат</a></li>
+					    <li><a class="dropdown-item" href="#">Гарантия</a></li>
+					    <li><a class="dropdown-item" href="#">Рассрочка и кредит</a></li>
+					</ul>
+				</li>
+				<hr>
+				<li class="nav-item" id="cabinet">
+					<a class="nav-link" href="login.html">Личный кабинет</a>
+				</li>
+
+				<li class="nav-item" id="fav">
+					<a class="nav-link" href="account.html">Избранное <span>(2)</span></a>
+				</li>
+				<li class="nav-item" id="compare">
+					<a class="nav-link" href="compare.html">Сравнить товары <span>(2)</span></a>
+				</li>
+			</ul>
+	    </div>
+	    <ul class="navbar-nav me-auto mb-lg-0" id="icons">
+	      	<li class="nav-item" id="search">
+		    <div class="wrap">
+			    <form>
+				    <input type="text" class="input" placeholder="Поиск">
+				</form>
+				    <img src="imgs/icons/search.svg" alt="Search" class="search_img">
+			</div>
+	      	</li>
+	      	<li class="nav-item" id="bag">
+	      		<a href="" class="dropdown_btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="imgs/icons/bag.svg" alt=""></a>
+	      		<span>2</span>
+				<ul class="dropdown-menu" id="dropdown_else">
+				    <li>
+				    	<table class="dropdown-item">
+				    	<tr>
+				    		<td>
+				    			<img src="imgs/iPhone12.png" alt="iPhone12">
+				    		</td>
+				    		<td>
+				    			iPhone 12 Pro 128 Гб <br>(Тихоокеанский синий)
+				    		</td>
+				    		<td id="price">
+				    			37 299 грн
+				    		</td>
+				    		<td>
+				    			<a href="">
+				    				<img src="imgs/icons/cross.svg" alt="cross" style="width:20px; height:20px;">
+				    			</a>
+				    		</td>
+				    	</tr>
+				    	</table>
+
+				    </li>
+				    <hr>
+				    <li>
+				    	<table class="dropdown-item">
+				    	<tr>
+				    		<td>
+				    			<img src="imgs/iPhone12.png" alt="iPhone12">
+				    		</td>
+				    		<td>
+				    			iPhone 12 Pro 128 Гб <br>(Тихоокеанский синий)
+				    		</td>
+				    		<td id="price">
+				    			37 299 грн
+				    		</td>
+				    		<td>
+				    			<a href="">
+				    				<img src="imgs/icons/cross.svg" alt="cross" style="width:20px; height:20px;">
+				    			</a>
+				    		</td>
+				    	</tr>
+				    	</table>
+				    </li>
+				    <hr>
+				    <li id="bag_btn"><a class="dropdown-item btn_in" href="bag.html">Перейти в корзину</a></li>
+				</ul>
+	      	</li>
+	      	<li class="nav-item" id="person">
+	      		<a href="" class="dropdown_btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="imgs/icons/person.svg" alt=""></a>
+				<ul class="dropdown-menu" id="dropdown_else">
+					<li><a class="dropdown-item cabinet_login" href="account.html">Личный кабинет</a></li>
+				    <li><a class="dropdown-item" href="account.html#favourite">Избранное (<span>2</span>)</a></li>
+				    <li><a class="dropdown-item" href="compare.html">Сравнить товары (<span>2</span>)</a></li>
+				    <li><a class="dropdown-item cabinet_login" href="account.html#">Настройки</a></li>
+				    <hr>
+				    <li id="btn_login"><a class="dropdown-item btn_in" href="login.html">Войти в личный<br> кабинет</a></li>
+				    <li><a class="dropdown-item" href="signup.html">Зарегистрироваться</a></li>
+				</ul>
+	      	</li>
+	      </ul>
+	  </div>
+	</nav>
+</header>
+
+	<section class="nav-header-link">
+		<div class="container-fluid">
+			<div class="row" id="links">
+				<div class="col-12">
+					<span>Главная</span>
+					<span>Личный кабинет</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="cabinet_profile">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-12">
+					<div id="profile">
+							<img src="imgs/person_profile.png" alt="Person">
+						<h5>Имя пользователя</h5>
+						<p>Дата рождения</p>
+						<ul class=" nav nav-pills" id="pills-tab" role="tablist">
+						  <li class="nav-item" role="presentation">
+						    <a class="btn_in active" id="settings-tab" data-bs-toggle="pill" href="#settings" role="tab" aria-controls="settings" aria-selected="true">
+						    	<img src="imgs/icons/settings.svg" alt="Settings">
+						    	Настройки
+						    </a>
+						  </li>
+						  <a href="" class="more">Выход</a>
+						  <hr>
+						  <li class="nav-item" role="presentation">
+						    <a class="nav-link" id="history-tab" data-bs-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">
+						    	<img src="imgs/icons/bag_b.svg" alt="Bag">
+						    	История покупок
+						    </a>
+						  </li>
+						  <li class="nav-item" role="presentation">
+						    <a class="nav-link" id="favourite-tab" data-bs-toggle="pill" href="#favourite" role="tab" aria-controls="favourite" aria-selected="false">
+						    	<img src="imgs/icons/heart_small.svg" alt="Heart">
+						    	Избранное
+						    </a>
+						  </li>
+						  <li class="nav-item" role="presentation">
+						    <a class="nav-link" id="bonus-tab" data-bs-toggle="pill" href="#bonus" role="tab" aria-controls="bonus" aria-selected="false">
+						    	<img src="imgs/icons/bonus.svg" alt="Bonus" style="width: 25px;">
+						    	Бонусная программа
+						    </a>
+						  </li>
+						  <li class="nav-item" role="presentation">
+						    <a class="nav-link" id="info-tab" data-bs-toggle="pill" href="#info" role="tab" aria-controls="info" aria-selected="false">
+						    	<img src="imgs/icons/person_b.svg" alt="Personality">
+						    	Личная информация
+						    </a>
+						  </li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-8 col-sm-12" id="">
+					<div class="tab-content" id="all_info">
+						<div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+					  		<h3>Настройки профиля</h3>
+					  		<div class="left_form">
+					  			<form>
+									<label for="name">Login</label>
+									<input type="text" name="first_name" required>
+									<br>
+									<button class="btn" type="submit">Изменить</button>
+								</form>	
+								<form>
+									<label for="password">Пароль</label>
+									<input type="password" id="password-input" name="password" required>
+									<a href="#" class="password-control"></a>
+									<br>
+									<label for="password">Повторить пароль</label>
+									<input type="password" name="password" required>
+									<br>
+									<button class="btn" type="submit">Изменить</button>
+								</form>
+					  		</div>
+						</div>
+						<div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+							<div class="none_fav">
+								<img src="imgs/icons/bag_none.svg" alt="Favourite">
+								<h4>Вы еще не приобрели товаров</h4>
+								<a href="index.html" class="btn" type="submit">Перейти к покупкам</a>
+							</div>
+					  		<!-- <table>
+					  			<tr>
+					  				<th></th>
+								    <th>Наименование</th>
+								    <th>Количество</th>
+								    <th>Цена</th>
+								  </tr>
+								  <tr>
+								  	<td class="photo">
+								  		<img src="imgs/iPhone12.png" alt="iPhone12">
+								  	</td>
+								    <td class="name">
+								    	<p>iPhone 12 Pro 128 Гб (Тихоокеанский синий)</p>	
+								    </td>
+								    <td>1</td>
+								    <td>
+								    	<span>1 х 37 299 =</span>
+								    	<h6>37 299 грн</h6>
+								    </td>
+								  </tr>
+								  <tr>
+								  	<td class="photo">
+								  		<img src="imgs/ipad_max.png" alt="iPad_max2">
+								  	</td>
+								    <td class="name">
+								    	<p>IPad 11 Pro Max 128GB</p>
+								    </td>
+								    <td>2</td>
+								    <td>	
+								    	<span>2 х 37 299 =</span>
+								    	<h6>62 698 грн</h6>
+								    </td>
+								  </tr>
+								  <tr id="sum">
+								  	<td></td>
+								  	<td></td>
+								  	<td>Итого:</td>
+								  	<td><h6>93 897 грн</h6></td>
+								  </tr>
+					  		</table> -->
+
+						</div>
+						<div class="products tab-pane fade" id="favourite" role="tabpanel" aria-labelledby="favourite-tab">
+							<div class="none_fav">
+								<img src="imgs/icons/heart.svg" alt="Favourite">
+								<h4>Вы еще не выбрали товаров</h4>
+								<a href="index.html" class="btn" type="submit">Перейти к покупкам</a>
+							</div>
+					  		<!-- <div class="cards">
+								<a href="product.html" class="card_link">
+									<div class="card">
+										<img src="imgs/iPhone12.png" alt="iPhone12">
+										<a href="" class="fav"><img src="imgs/icons/heart_b.svg" alt="Favourite"></a>
+										<a href="" class="compare"><img src="imgs/icons/compare.svg" alt="Compare"></a>
+										<div class="content">
+											<div class="name">
+												<p>
+													iPhone 12 Pro 128 Гб
+													<br>
+													<span>(Тихоокеанский синий)</span>
+												</p>
+											</div>
+											<div class="price">
+												<p>
+													37 299 грн
+												</p>
+											</div>
+											
+											<a href="product.html" class="btn">
+												Купить
+											</a>
+										</div>
+									</div>
+								</a>
+								<a href="product.html" class="card_link">
+									<div class="card">
+										<img src="imgs/iPhone12.png" alt="iPhone12">
+										<a href="" class="fav"><img src="imgs/icons/heart_b.svg" alt="Favourite"></a>
+										<a href="" class="compare"><img src="imgs/icons/compare.svg" alt="Compare"></a>
+										<div class="content">
+											<div class="name">
+												<p>
+													iPhone 12 Pro 128 Гб
+													<br>
+													<span>(Тихоокеанский синий)</span>
+												</p>
+											</div>
+											<div class="price">
+												<p>
+													37 299 грн
+												</p>
+											</div>
+											
+											<a href="product.html" class="btn">
+												Купить
+											</a>
+										</div>
+									</div>
+								</a>
+								<a href="product.html" class="card_link">
+									<div class="card">
+										<img src="imgs/iPhone12.png" alt="iPhone12">
+										<a href="" class="fav"><img src="imgs/icons/heart_b.svg" alt="Favourite"></a>
+										<a href="" class="compare"><img src="imgs/icons/compare.svg" alt="Compare"></a>
+										<div class="content">
+											<div class="name">
+												<p>
+													iPhone 12 Pro 128 Гб
+													<br>
+													<span>(Тихоокеанский синий)</span>
+												</p>
+											</div>
+											<div class="price">
+												<p>
+													37 299 грн
+												</p>
+											</div>
+											
+											<a href="product.html" class="btn">
+												Купить
+											</a>
+										</div>
+									</div>
+								</a>
+							</div> -->
+						</div>
+						<div class="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+					  		<h3>Индивидуальная бонусная программа*</h3>
+					  		<p>*индивидуальная бонусная программа</p>
+					  		<div class="left_form">
+						  		<form>
+									<label for="promocode">Промокод</label>
+									<input type="text" name="promocode">
+									<br>
+									<button class="btn" type="submit">Применить</button>
+								</form>
+							</div>
+						</div>
+					  	<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+					  		<h3>Личная информация</h3>
+					  		<div class="left_form">
+					  			<form>
+									<label for="name">Имя</label>
+									<input type="text" name="first_name">
+									<br class="br">
+									<label for="surname">Фамилия</label>
+									<input type="text" name="last_name">
+									<br>
+									<label for="email">E-mail</label>
+									<input type="email" name="email">
+									<br class="br">
+									<label for="phone">Телефон</label>
+									<input type="tel" name="phone" data-format="+38 (ddd) ddd-dd-dd" data-country="UA" placeholder="+38 (0XX) XXX-XXXX">
+									<br>
+									<label for="date">День рождения</label>
+									<input type="date" id="start" name="trip-start" value="1991-01-01" min="1950-01-01" max="2018-12-31">
+								    <br>
+								    <br>
+								    <h3>Адрес</h3>
+								    <label for="city">Город</label>
+									<input type="text" name="city">
+									<br class="br">
+									<label for="address">Адрес</label>
+									<input type="text" name="address">
+									<br>
+									<label for="address">Способ доставки</label>
+									<input type="text" name="address">
+									<br>
+									<h5 style="margin-top: 30px;">Дополнительные сведения</h5>
+									<textarea name="comment" rows="4" cols="50"></textarea>
+									<br>
+									<button class="btn" type="submit">Сохранить</button>
+								</form>
+					  		</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="popular">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h2>Просмотренные товары</h2>
+				<div id="owl-demo" class="owl-carousel owl-theme">
+				  <div class="item">
+				  	<img src="imgs/iPhone12.png" alt="iPhone12">
+				  	<h5>iPhone 12 Pro 128GB</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="product.html" class="btn">Купить</a>
+				  </div>
+				  <div class="item">
+				  	<img src="imgs/airpod_max.png" alt="AirPod Max">
+				  	<h5>Apple AirPods Max</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="" class="btn">Купить</a>
+				  </div>
+				  <div class="item">
+				  	<img src="imgs/ipad_max.png" alt="iPad Max">
+				  	<h5>IPad 11 Pro Max 128GB</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="" class="btn">Купить</a>
+				  </div>
+				  <div class="item">
+				  	<img src="imgs/iPhone11_max.png" alt="iPhone11">
+				  	<h5>IPhone 11 Pro Max 64GB</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="" class="btn">Купить</a>
+				  </div>
+				  <div class="item">
+				  	<img src="imgs/iPhone12.png" alt="iPhone12">
+				  	<h5>iPhone 12 Pro 128GB</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="" class="btn">Купить</a>
+				  </div>
+				  <div class="item">
+				  	<img src="imgs/airpod_max.png" alt="AirPod Max">
+				  	<h5>Apple AirPods Max</h5>
+				  	<p>37 299 грн</p>
+				  	<a href="" class="btn">Купить</a>
+				  </div>
+				 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-6">
+				<ul>
+					<li>
+						<a href="">Mac</a>
+					</li>
+					<li>
+						<a href="products_list.html">iPhone</a>
+					</li>
+					<li>
+						<a href="">iPad</a>
+					</li>
+					<li>
+						<a href="">Watch</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6">
+				<ul id="second_menu">
+					<li>
+						<a href="">О магазине</a>
+					</li>
+					<li>
+						<a href="">Оплата и доставка</a>
+					</li>
+					<li>
+						<a href="">Обмен и возврат</a>
+					</li>
+					<li>
+						<a href="">Гарантия</a>
+					</li>
+					<li>
+						<a href="">Рассрочка и кредит</a>
+					</li>
+					<li>
+						<a href="">Политика конфиденциальности</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-2" id="offset"></div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<ul id="contact_services">
+					<li>
+						<div id="phone">
+							<p>
+								Горячая линия
+							</p>
+							<a href="tel:+38095020320">(095) 02 03 202</a>
+						</div>
+					</li>
+					<li>
+						<div id="email">
+							<p>
+								Email
+							</p>
+							<a href="mailto:info@istore.ua">info@istore.ua</a>
+						</div>
+					</li>
+					<li>
+						<p>
+							Оплата с помощью сервисов:
+						</p>
+						<img src="imgs/icons/visa.svg" alt="Visa" id="visa">
+						<img src="imgs/icons/mastercard.svg" alt="Mastercard">
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-6">
+				<div id="map">
+					<p>
+						Точка выдачи
+					</p>
+					<a href="">Киев, ОООО, 54</a>
+					<br><br>
+					<span>
+						Пн - Пт:<br>
+						10:00 - 17:00 <br>
+						Сб: 10:00 - 15:00 <br>
+						Вскр: выходной <br>
+					</span>
+				</div>
+			</div>
+			<div class="col-12">
+				<p id="rights">
+					 © 2021 Все права защищены.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/main.js"></script>	
+</body>
+</html>
