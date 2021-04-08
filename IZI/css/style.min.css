@@ -1,0 +1,322 @@
+body {
+  font-family: 'Inter', sans-serif;
+  color: #0A0A09;
+}
+
+header {
+  background: #FFD600;
+  color: #0A0A09;
+  text-align: left;
+  padding: 20px 0;
+}
+
+header .logo {
+  width: 65%;
+}
+
+header .nav {
+  text-align: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 100px;
+}
+
+header hr {
+  display: none;
+}
+
+header .navLink {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 24px;
+  background: #0A0A09;
+  color: #FFD600;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 8px 15px;
+}
+
+header .help_small {
+  display: none;
+}
+
+header .help {
+  text-align: right;
+  display: inline-block;
+  margin: 12px 0;
+}
+
+header .help p {
+  margin: 0;
+  font-weight: 600;
+  padding-right: 1rem;
+}
+
+header .help .phone {
+  padding: 0;
+}
+
+header .help a {
+  color: #0A0A09;
+}
+
+header .help a:hover {
+  color: #0A0A09;
+}
+
+footer {
+  background: #0A0A09;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer .form a {
+  color: #FFD600;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+footer .form .mailLink {
+  display: none;
+}
+
+footer .copyright {
+  text-align: center;
+}
+
+footer small {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+footer .mail {
+  text-align: right;
+}
+
+footer .mail a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#main {
+  margin: 50px 0;
+}
+
+#main img {
+  width: 100%;
+}
+
+#main .professor {
+  position: absolute;
+  width: 120%;
+  bottom: 40px;
+}
+
+#main .prof {
+  display: none;
+}
+
+#main .space {
+  display: none;
+}
+
+#about {
+  text-align: center;
+  margin: 50px;
+}
+
+#about h4 {
+  width: 48%;
+  margin: 20px auto 30px;
+}
+
+#about h4 span {
+  color: #5A3497;
+}
+
+#about .about_text {
+  text-align: left;
+}
+
+#about .about_text h4 {
+  width: 100%;
+  color: #5A3497;
+}
+
+#about .boys {
+  text-align: right;
+}
+
+#about .boys img {
+  width: 90%;
+}
+
+#workers {
+  text-align: center;
+  margin: 20px 0 50px;
+}
+
+#workers h6 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+#workers p {
+  width: 75%;
+  margin: 10px auto;
+  font-weight: 600;
+}
+
+#workers img {
+  margin-top: 40px;
+}
+
+#review {
+  margin: 50px 0;
+}
+
+#review .row {
+  margin-bottom: 30px;
+}
+
+#review h1 {
+  text-align: center;
+}
+
+#review h5 {
+  color: #E5E5E5;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+#review .person-photo img {
+  width: 80%;
+}
+
+#review .reaction {
+  margin: 50px 0;
+}
+
+#review .reaction img {
+  width: 35px;
+  margin: 0 10px;
+}
+
+#review .comment {
+  background: #E5E5E5;
+  border-radius: 50px;
+  height: 150px;
+  text-align: left;
+  vertical-align: middle;
+  padding: 20px 10px;
+}
+
+#review .comment p {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+#review form input {
+  width: 100%;
+  border-radius: 50px;
+  height: 150px;
+  border: 2px solid #E5E5E5;
+  padding: 20px 10px;
+}
+
+#review .pagination {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  line-height: 1.25;
+  color: #E5E5E5;
+  background-color: #fff;
+  border: none;
+}
+
+.active-link {
+  color: #0A0A09;
+}
+
+@media (max-width: 992px) {
+  header .menu {
+    text-align: center;
+  }
+  header .help {
+    text-align: center;
+  }
+  header .help p {
+    padding-right: 0;
+  }
+  #review .person-photo img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #main .subjects1 {
+    margin-bottom: 50px;
+  }
+  #main .prof {
+    display: block;
+  }
+  #main .professor_left {
+    position: absolute;
+    width: 120%;
+    top: 60px;
+    left: -40px;
+  }
+  #about h4 {
+    width: 70%;
+  }
+  #review .reaction img {
+    margin: 0;
+  }
+  footer {
+    padding: 30px 0;
+  }
+  footer .form {
+    text-align: center;
+  }
+  footer .form .mailLink {
+    color: #fff;
+    display: inline-block;
+  }
+  footer .form a {
+    margin-bottom: 20px;
+  }
+  footer .mail {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #main .space {
+    display: block;
+  }
+  #main .professor {
+    bottom: 10px;
+  }
+  #main .professor_left {
+    top: 10px;
+    left: 40px;
+  }
+  #review .reaction img {
+    width: 25px;
+  }
+  #about h4 {
+    width: 100%;
+  }
+}
