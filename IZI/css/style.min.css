@@ -71,7 +71,11 @@ header .help a:hover {
 footer {
   background: #0A0A09;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px 0 10px;
+}
+
+footer .form {
+  padding: 10px 0;
 }
 
 footer .form a {
@@ -95,6 +99,7 @@ footer small {
 
 footer .mail {
   text-align: right;
+  padding: 10px 0;
 }
 
 footer .mail a {
@@ -113,8 +118,9 @@ footer .mail a {
 
 #main .professor {
   position: absolute;
-  width: 120%;
-  bottom: 40px;
+  width: 160%;
+  bottom: -40px;
+  right: -90px;
 }
 
 #main .prof {
@@ -190,7 +196,7 @@ footer .mail a {
 }
 
 #review h5 {
-  color: #E5E5E5;
+  color: #8D8383;
   text-align: center;
   margin: 20px 0 0;
 }
@@ -205,7 +211,7 @@ footer .mail a {
 
 #review .reaction img {
   width: 35px;
-  margin: 0 10px;
+  margin: 0 30px;
 }
 
 #review .comment {
@@ -214,19 +220,26 @@ footer .mail a {
   height: 150px;
   text-align: left;
   vertical-align: middle;
-  padding: 20px 10px;
+  padding: 20px 25px;
 }
 
 #review .comment p {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 15px;
+}
+
+#review form label {
+  color: #8D8383;
+  position: absolute;
+  top: 35px;
+  left: 40px;
 }
 
 #review form input {
   width: 100%;
   border-radius: 50px;
   height: 150px;
-  border: 2px solid #E5E5E5;
+  border: 2px solid #8D8383;
   padding: 20px 10px;
 }
 
@@ -241,13 +254,19 @@ footer .mail a {
   display: block;
   padding: .5rem .75rem;
   line-height: 1.25;
-  color: #E5E5E5;
+  color: #8D8383;
   background-color: #fff;
   border: none;
 }
 
 .active-link {
   color: #0A0A09;
+}
+
+@media (max-width: 1130px) {
+  #main .professor {
+    right: -60px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -260,8 +279,17 @@ footer .mail a {
   header .help p {
     padding-right: 0;
   }
+  #main .professor {
+    bottom: -30px;
+  }
   #review .person-photo img {
     width: 100%;
+  }
+  #review .reaction {
+    margin: 0;
+  }
+  #review .reaction img {
+    margin: 20px;
   }
 }
 
@@ -269,20 +297,22 @@ footer .mail a {
   #main .subjects1 {
     margin-bottom: 50px;
   }
+  #main .professor {
+    width: 185%;
+    right: -80px;
+    bottom: -20px;
+  }
   #main .prof {
     display: block;
   }
   #main .professor_left {
     position: absolute;
-    width: 120%;
-    top: 60px;
-    left: -40px;
+    width: 185%;
+    top: -30px;
+    left: -80px;
   }
   #about h4 {
     width: 70%;
-  }
-  #review .reaction img {
-    margin: 0;
   }
   footer {
     padding: 30px 0;
@@ -307,14 +337,13 @@ footer .mail a {
     display: block;
   }
   #main .professor {
-    bottom: 10px;
+    width: 140%;
+    bottom: -30px;
   }
   #main .professor_left {
-    top: 10px;
+    width: 140%;
+    top: -10px;
     left: 40px;
-  }
-  #review .reaction img {
-    width: 25px;
   }
   #about h4 {
     width: 100%;
