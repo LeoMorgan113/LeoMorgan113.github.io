@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>'Clover Knot'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="./Utils/trackball-rotator.js"></script>
+    <script src="./Utils/m4.js"></script>
+    <script src="shader.gpu"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body onload="init().then()">
+    <div id='banner'>
+        <h1>'Clover Knot'</h1>
+
+        <p>Drag your mouse on the 'Clover Knot' to rotate it.<br>
+            (On a touch screen, you can use your finger.)</p>
+
+        <div id="controls">
+            <div>
+
+                <button class="glow-on-hover" onclick="(function(){isWireFrame = !isWireFrame;draw();})();">Show wire-frame</button>
+                <button class="glow-on-hover" onclick='(function (){ if (distance < 100) {++distance; draw();}})();'>Zoom In</button>
+                <button class="glow-on-hover" onclick="(function (){ if (distance > 2) {--distance; draw();}})();">Zoom Out</button>
+            </div>
+            <div class="slider">
+                <label for="radiusRange">Radius (step=0.1)</label><br>
+                <input type="range" min="0" max="3" value="1" class="slider" step="0.1" id="radiusRange">
+                <input type="number" min="0" max="3" value="1" class="slider" step="0.1" id="radiusInput">
+            </div>
+            <div class="slider">
+                <label for="amplitudeRange">Amplitude (step=0.02)</label><br>
+                <input type="range" min="0" max="0.5" value="0.05" class="slider" step="0.02" id="amplitudeRange">
+                <input type="number" min="0" max="0.5" value="0.05" class="slider" step="0.02" id="amplitudeInput">
+            </div>
+            <div class="slider">
+                <label for="verticesRange">Vertexes (step=1)</label><br>
+                <input type="range" min="40" max="100" value="50" step="1" class="slider" id="verticesRange">
+                <input type="number" min="40" max="100" value="50" step="1" class="slider" id="verticesInput">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="canvas-holder" style="width: 100vw; height: 100vh">
+        <canvas id="canvas">
+        </canvas>
+    </div>
+    <p style="position: absolute;z-index: 100;color: white;bottom: 0;right: 10px;">Lab#1 by Koriavikova Valeriia, TI-81</p>
+</body>
+</html>
