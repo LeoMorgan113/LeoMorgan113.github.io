@@ -226,7 +226,7 @@ function LoadTexture() {
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 255, 255]));
     const image = new Image();
     image.crossOrigin = 'anonymous';
-    image.src = "texture.png";
+    image.src = "./Textures/texture.png";
     image.addEventListener('load', () => {
         // Now that the image has loaded make copy it to the texture.
         gl.bindTexture(gl.TEXTURE_2D, texture);
